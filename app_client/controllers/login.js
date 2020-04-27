@@ -16,6 +16,16 @@ function loginCtrl($http, $location, $scope) {
         "июля","августа","сентября","октября","ноября","декабря");
     document.getElementById('date').innerHTML = day[d.getDay()] + ", " + d.getDate() + " " + month[d.getMonth()];
 
+    function viewDiv() {
+        console.log('qweqwe');
+        // el.style.display = (el.style.display == 'none') ? '' : 'none'
+    }
+
+    document.getElementById("hb1").onclick = function() {
+        console.log('Я есть Div');
+        hidden_content.style.display = (hidden_content.style.display == 'none') ? '' : 'none'
+    };
+
     let vm = this;
     vm.error = '';
 
@@ -63,7 +73,8 @@ function loginCtrl($http, $location, $scope) {
             console.log('error add practic: ', err);
             vm.error = 'Неверно указан логин или пароль!';
         });
-    }
+    };
+
 
 
 

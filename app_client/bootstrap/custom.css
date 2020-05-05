@@ -1,0 +1,258 @@
+html, body {padding:0; margin:0;}
+
+
+.container-bg {
+    background: url(/img/IMG_2868.png);
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding-top: 8%;
+    padding-bottom: 8%;
+    padding-left: 6%;
+    padding-right: 6%;
+}
+
+.container-bg-plus {
+    background: url(/img/IMG_2868.png);
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding-top: 3%;
+    padding-bottom: 6%;
+    padding-left: 6%;
+    padding-right: 6%;
+}
+
+.main {
+    /*background-color:#fff;*/
+    /*margin-left: 5%;*/
+    color: #ffffff;
+}
+
+.gbp {
+    font-size: 30pt;
+    line-height: 20pt;
+}
+
+.nntc{
+    font-size: 38pt;
+    line-height: 25pt;
+}
+
+.time {
+    font-size: 80pt;
+    line-height: 50pt;
+}
+
+.date {
+    font-size: 25pt;
+    line-height: 50pt;
+}
+
+.time-sm {
+    font-size: 40pt;
+}
+
+.date-sm {
+    font-size: 15pt;
+    line-height: 10pt;
+}
+
+.info-row1 {
+    margin-top: 30%;
+}
+
+.info {
+    background-color:#fff;
+    width: 49%;
+    border-radius: 20px;
+    padding: 1%;
+    margin-bottom: 2%;
+}
+
+.info-l {
+    margin-right: 1%;
+}
+
+.info-r {
+    margin-left: 1%;
+}
+
+.p-info {
+    font-size: 25pt;
+    margin-bottom: 0px;
+}
+
+.k {
+    height: 90%;
+    width: 90%;
+}
+
+.col-img {
+    width: 25%;
+}
+
+.col-space {
+    width: 10%;
+}
+
+.col-80-text {
+    width: 65%;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.h-w-100 {
+    height: 100%;
+    width: 100%;
+}
+
+.td-vertical-align-middle {
+    vertical-align:middle;
+    border:0px solid #fff;
+    font-size: 25pt;
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+
+.help-button-1 {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 20px;
+    width: 40mm;
+    height: 40mm;
+    border-radius: 7.8mm;
+    opacity: 0.8;
+    background-color: #FFF;
+}
+
+.help-button-2 {
+    width: 30mm;
+    height: 30mm;
+    margin: 5mm;
+    padding: 2.5mm;
+    border-radius:50%;
+    opacity: 0.8;
+    background-color: #666666;
+}
+
+.help-button-3 {
+    width: 25mm;
+    height: 25mm;
+    padding: 2.5mm;
+    border-radius:50%;
+    opacity: 0.8;
+    background-color: #4D4D4D;
+}
+
+.help-button-4 {
+    width: 20mm;
+    height: 20mm;
+    padding-top: 8px;
+    padding-left: 9px;
+    border-radius:50%;
+    opacity: 0.8;
+    background-color: #333333;
+}
+
+.sq {
+    width: 23.5%;
+    padding: 0;
+    margin: 0;
+}
+
+.sq-l {
+    margin-right: 1%;
+    margin-bottom: 1%;
+}
+
+.sq-m {
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+}
+
+.sq-r {
+    margin-left: 1%;
+    margin-bottom: 1%;
+}
+
+.sq-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; // пропорции блока определяются здесь
+}
+
+.sq-content {
+    position: absolute;
+    border-radius: 20px;
+    padding: 5%;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.img-for-sq {
+     width: 40%
+ }
+
+.space-for-sq {
+    width: 60%;
+}
+
+.text-for-sq {
+    margin-top: 5%;
+    font-size: 23pt;
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+.text-for-sq-gr {
+    margin-top: 20%;
+    font-size: 19pt;
+    margin-bottom: 0px;
+    font-weight: bold;
+    color: #cacaca;
+}
+
+.row-for-time {
+    height: 6%;
+}
+
+.div-shedule {
+
+    width: 100%;
+    height: 92%;
+    border-radius: 20px;
+    margin-top: 2%;
+}
+
+.schedule-for-the-day {
+    color: #ffffff;
+    height: 3%;
+    font-size: 20pt;
+}
+
+hr {
+    border-color: #FFFFFF;
+    border-width: 3px;
+    margin: 8px 0 15px 0;
+    width: 100%;
+}

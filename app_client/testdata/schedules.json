@@ -2,116 +2,266 @@
   "MAS": [
     {
       "Date": "Вторник, 5 мая",
-      "Group": [
-        {
-          "GroupName": "4ПКС-16-2",
-          "Discipline": {
-            "LessonNumber1": {
-              "Teacher": "Слугин В.Г.",
-              "DisciplineName": "МДК 03.01",
-              "LectureRoom": "155"
-            },
-            "LessonNumber2": {
-              "Teacher": "Слугин В.Г.",
-              "DisciplineName": "МДК 03.01",
-              "LectureRoom": "155"
-            },
-            "LessonNumber3": {
-              "Teacher": "Слугин В.Г.",
-              "DisciplineName": "МДК 03.01",
-              "LectureRoom": "155"
-            },
-            "LessonNumber4": {
-              "Teacher": "Слугин В.Г.",
-              "DisciplineName": "МДК 03.01",
-              "LectureRoom": "155"
-            },
-            "LessonNumber5": {
-              "Teacher": "",
-              "DisciplineName": "",
-              "LectureRoom": ""
-            },
-            "LessonNumber6": {
-              "Teacher": "",
-              "DisciplineName": "",
-              "LectureRoom": ""
-            }
+      "Course": [
+          {
+            "CourseNumber": "4",
+            "Group": [
+              {
+                "GroupName": "4ПКС-16-2",
+                "Discipline": {
+                  "LessonNumber1": {
+                    "Teacher": "Слугин В.Г.",
+                    "DisciplineName": "МДК 03.01",
+                    "LectureRoom": "155"
+                  },
+                  "LessonNumber2": {
+                    "Teacher": "Слугин В.Г.",
+                    "DisciplineName": "МДК 03.01",
+                    "LectureRoom": "155"
+                  },
+                  "LessonNumber3": {
+                    "Teacher": "Слугин В.Г.",
+                    "DisciplineName": "МДК 03.01",
+                    "LectureRoom": "155"
+                  },
+                  "LessonNumber4": {
+                    "Teacher": "Слугин В.Г.",
+                    "DisciplineName": "МДК 03.01",
+                    "LectureRoom": "155"
+                  },
+                  "LessonNumber5": {
+                    "Teacher": "",
+                    "DisciplineName": "",
+                    "LectureRoom": ""
+                  },
+                  "LessonNumber6": {
+                    "Teacher": "",
+                    "DisciplineName": "",
+                    "LectureRoom": ""
+                  }
+                }
+              },
+              {
+                "GroupName": "4ПКС-16-1",
+                "Discipline": {
+                  "LessonNumber1": {
+                    "Teacher": "Слугин В.Г.",
+                    "DisciplineName": "МДК 03.01",
+                    "LectureRoom": "155"
+                  },
+                  "LessonNumber2": {
+                    "Teacher": "Слугин В.Г.",
+                    "DisciplineName": "МДК 03.01",
+                    "LectureRoom": "155"
+                  },
+                  "LessonNumber3": {
+                    "Teacher": "Слугин В.Г.",
+                    "DisciplineName": "МДК 03.01",
+                    "LectureRoom": "155"
+                  },
+                  "LessonNumber4": {
+                    "Teacher": "Слугин В.Г.",
+                    "DisciplineName": "МДК 03.01",
+                    "LectureRoom": "155"
+                  },
+                  "LessonNumber5": {
+                    "Teacher": "",
+                    "DisciplineName": "",
+                    "LectureRoom": ""
+                  },
+                  "LessonNumber6": {
+                    "Teacher": "",
+                    "DisciplineName": "",
+                    "LectureRoom": ""
+                  }
+                }
+              },
+              {
+                "GroupName": "4ПКС-16-1",
+                "Discipline": {
+                  "LessonNumber1": {
+                    "Teacher": "Слугин В.Г.",
+                    "DisciplineName": "МДК 03.01",
+                    "LectureRoom": "155"
+                  },
+                  "LessonNumber2": {
+                    "Teacher": "Слугин В.Г.",
+                    "DisciplineName": "МДК 03.01",
+                    "LectureRoom": "155"
+                  },
+                  "LessonNumber3": {
+                    "Teacher": "Слугин В.Г.",
+                    "DisciplineName": "МДК 03.01",
+                    "LectureRoom": "155"
+                  },
+                  "LessonNumber4": {
+                    "Teacher": "Слугин В.Г.",
+                    "DisciplineName": "МДК 03.01",
+                    "LectureRoom": "155"
+                  },
+                  "LessonNumber5": {
+                    "Teacher": "",
+                    "DisciplineName": "",
+                    "LectureRoom": ""
+                  },
+                  "LessonNumber6": {
+                    "Teacher": "",
+                    "DisciplineName": "",
+                    "LectureRoom": ""
+                  }
+                }
+              },
+              {
+                "GroupName": "4ПКС-16-1",
+                "Discipline": {
+                  "LessonNumber1": {
+                    "Teacher": "Слугин В.Г.",
+                    "DisciplineName": "МДК 03.01",
+                    "LectureRoom": "155"
+                  },
+                  "LessonNumber2": {
+                    "Teacher": "Слугин В.Г.",
+                    "DisciplineName": "МДК 03.01",
+                    "LectureRoom": "155"
+                  },
+                  "LessonNumber3": {
+                    "Teacher": "Слугин В.Г.",
+                    "DisciplineName": "МДК 03.01",
+                    "LectureRoom": "155"
+                  },
+                  "LessonNumber4": {
+                    "Teacher": "Слугин В.Г.",
+                    "DisciplineName": "МДК 03.01",
+                    "LectureRoom": "155"
+                  },
+                  "LessonNumber5": {
+                    "Teacher": "",
+                    "DisciplineName": "",
+                    "LectureRoom": ""
+                  },
+                  "LessonNumber6": {
+                    "Teacher": "",
+                    "DisciplineName": "",
+                    "LectureRoom": ""
+                  }
+                }
+              },
+              {
+                "GroupName": "4ПКС-16-1",
+                "Discipline": {
+                  "LessonNumber1": {
+                    "Teacher": "Слугин В.Г.",
+                    "DisciplineName": "МДК 03.01",
+                    "LectureRoom": "155"
+                  },
+                  "LessonNumber2": {
+                    "Teacher": "Слугин В.Г.",
+                    "DisciplineName": "МДК 03.01",
+                    "LectureRoom": "155"
+                  },
+                  "LessonNumber3": {
+                    "Teacher": "Слугин В.Г.",
+                    "DisciplineName": "МДК 03.01",
+                    "LectureRoom": "155"
+                  },
+                  "LessonNumber4": {
+                    "Teacher": "Слугин В.Г.",
+                    "DisciplineName": "МДК 03.01",
+                    "LectureRoom": "155"
+                  },
+                  "LessonNumber5": {
+                    "Teacher": "",
+                    "DisciplineName": "",
+                    "LectureRoom": ""
+                  },
+                  "LessonNumber6": {
+                    "Teacher": "",
+                    "DisciplineName": "",
+                    "LectureRoom": ""
+                  }
+                }
+              }
+            ]
           }
-        },
-        {
-          "GroupName": "4ПКС-16-1",
-          "Discipline": {
-            "LessonNumber1": {
-              "Teacher": "Слугин В.Г.",
-              "DisciplineName": "МДК 03.01",
-              "LectureRoom": "155"
-            },
-            "LessonNumber2": {
-              "Teacher": "Слугин В.Г.",
-              "DisciplineName": "МДК 03.01",
-              "LectureRoom": "155"
-            },
-            "LessonNumber3": {
-              "Teacher": "Слугин В.Г.",
-              "DisciplineName": "МДК 03.01",
-              "LectureRoom": "155"
-            },
-            "LessonNumber4": {
-              "Teacher": "Слугин В.Г.",
-              "DisciplineName": "МДК 03.01",
-              "LectureRoom": "155"
-            },
-            "LessonNumber5": {
-              "Teacher": "",
-              "DisciplineName": "",
-              "LectureRoom": ""
-            },
-            "LessonNumber6": {
-              "Teacher": "",
-              "DisciplineName": "",
-              "LectureRoom": ""
-            }
-          }
-        }
       ]
     },
     {
       "Date": "Среда, 6 мая",
-      "Group": [
+      "Course": [
         {
-          "GroupName": "4ПКС-16-2",
-          "Discipline": {
-            "LessonNumber1": {
-              "Teacher": "Слугин В.Г.",
-              "DisciplineName": "МДК 03.01",
-              "LectureRoom": "155"
+          "CourseNumber": "4",
+          "Group": [
+            {
+              "GroupName": "4ПКС-16-26",
+              "Discipline": {
+                "LessonNumber1": {
+                  "Teacher": "Слугин В.Г.",
+                  "DisciplineName": "МДК 03.01",
+                  "LectureRoom": "155"
+                },
+                "LessonNumber2": {
+                  "Teacher": "Слугин В.Г.",
+                  "DisciplineName": "МДК 03.01",
+                  "LectureRoom": "155"
+                },
+                "LessonNumber3": {
+                  "Teacher": "Слугин В.Г.",
+                  "DisciplineName": "МДК 03.01",
+                  "LectureRoom": "155"
+                },
+                "LessonNumber4": {
+                  "Teacher": "Слугин В.Г.",
+                  "DisciplineName": "МДК 03.01",
+                  "LectureRoom": "155"
+                },
+                "LessonNumber5": {
+                  "Teacher": "",
+                  "DisciplineName": "",
+                  "LectureRoom": ""
+                },
+                "LessonNumber6": {
+                  "Teacher": "",
+                  "DisciplineName": "",
+                  "LectureRoom": ""
+                }
+              }
             },
-            "LessonNumber2": {
-              "Teacher": "Слугин В.Г.",
-              "DisciplineName": "МДК 03.01",
-              "LectureRoom": "155"
-            },
-            "LessonNumber3": {
-              "Teacher": "Слугин В.Г.",
-              "DisciplineName": "МДК 03.01",
-              "LectureRoom": "155"
-            },
-            "LessonNumber4": {
-              "Teacher": "Слугин В.Г.",
-              "DisciplineName": "МДК 03.01",
-              "LectureRoom": "155"
-            },
-            "LessonNumber5": {
-              "Teacher": "",
-              "DisciplineName": "",
-              "LectureRoom": ""
-            },
-            "LessonNumber6": {
-              "Teacher": "",
-              "DisciplineName": "",
-              "LectureRoom": ""
+            {
+              "GroupName": "4ПКС-16-1",
+              "Discipline": {
+                "LessonNumber1": {
+                  "Teacher": "Слугин В.Г.",
+                  "DisciplineName": "МДК 03.01",
+                  "LectureRoom": "155"
+                },
+                "LessonNumber2": {
+                  "Teacher": "Слугин В.Г.",
+                  "DisciplineName": "МДК 03.01",
+                  "LectureRoom": "155"
+                },
+                "LessonNumber3": {
+                  "Teacher": "Слугин В.Г.",
+                  "DisciplineName": "МДК 03.01",
+                  "LectureRoom": "155"
+                },
+                "LessonNumber4": {
+                  "Teacher": "Слугин В.Г.",
+                  "DisciplineName": "МДК 03.01",
+                  "LectureRoom": "155"
+                },
+                "LessonNumber5": {
+                  "Teacher": "",
+                  "DisciplineName": "",
+                  "LectureRoom": ""
+                },
+                "LessonNumber6": {
+                  "Teacher": "",
+                  "DisciplineName": "",
+                  "LectureRoom": ""
+                }
+              }
             }
-          }
+          ]
         }
       ]
     }

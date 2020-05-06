@@ -7,7 +7,9 @@ function scheduleCtrl($http, $location, $scope) {
             m = (m < 10) ? '0' + m : m,
             document.getElementById('time').innerHTML = h + ':' + m;
     }, 1000);
-
+    $('.popover-dismiss').popover({
+        trigger: 'focus'
+    })
     let d = new Date();
     let day = new Array("Воскресенье", "Понедельник", "Вторник",
         "Среда", "Четверг", "Пятница", "Суббота");
@@ -53,6 +55,7 @@ function scheduleCtrl($http, $location, $scope) {
 
 
         for (let i = 0; i < mas.length; i++) {
+            let zx;
             let id_div_schedule_date = 'scheduleDate' + i;
             let id_schedule_row = 'scheduleRow' + i;
             let a = 1;
@@ -66,39 +69,98 @@ function scheduleCtrl($http, $location, $scope) {
 
             newDiv = null;
 
-            for (let j = 0; j < mas[i].Group.length; j++) {
-                let newDiv2 = document.createElement('div');
-                //newDiv2.className = 'sq';
-                //let innerDiv2 = "<div class=\"sq sq-";
+            for (let l = 0; l < mas[i].Course.length; l++) {
+                let newDiv1 = document.createElement('div');
+                let id_div_course_number = id_div_schedule_date + 'scheduleCourseNumber' + l;
 
-                switch (a) {
-                    case 1:
-                        newDiv2.className = 'sq sq-l';
-                        //innerDiv2 = innerDiv2 + 'l';
-                        a++;
+                newDiv1.className = 'row no-margin сourse-number';
+                newDiv1.id = id_div_course_number;
+
+                document.getElementById(id_schedule_row).appendChild(newDiv1);
+
+                let element1 = document.getElementById(id_div_course_number);
+                let n = mas[i].Course[l].CourseNumber;
+
+                switch (n) {
+                    case '1':
+                        $(element1).append('1 Курс');
                         break;
-                    case 2:
-                    case 3:
-                        newDiv2.className = 'sq sq-m';
-                        //innerDiv2 = innerDiv2 + 'm';
-                        a++;
+                    case '2':
+                        $(element1).append('2 Курс');
                         break;
-                    case 4:
-                        newDiv2.className = 'sq sq-r';
-                        //innerDiv2 = innerDiv2 + 'r';
-                        a = 1;
+                    case '3':
+                        $(element1).append('3 Курс');
+                        break;
+                    case '4':
+                        $(element1).append('4 Курс');
                         break;
                 }
 
-                let innerDiv2  = '<div class="sq-wrapper"><div class="sq-content"><div class="row no-margin"><div class="text-for-sq-gr">Группа</div><div class="text-for-sq" id="';
-                let id_div_schedule_group_name = id_div_schedule_date + 'scheduleGroupName' + j;
-                innerDiv2 = innerDiv2 + id_div_schedule_group_name;
-                innerDiv2 = innerDiv2 + '"></div></div></div></div>';
-                console.log(innerDiv2);
-                newDiv2.innerHTML = innerDiv2;
-                document.getElementById(id_schedule_row).appendChild(newDiv2);
-                let element2 = document.getElementById(id_div_schedule_group_name);
-                $(element2).append(mas[i].Group[j].GroupName);
+                for (let j = 0; j < mas[i].Course[0].Group.length; j++) {
+                    let newDiv2 = document.createElement('div');
+                    let id_for_newDiv2 = id_div_schedule_date +'Sq' + j;
+                    switch (a) {
+                        case 1:
+                            newDiv2.className = 'sq sq-l';
+                            //innerDiv2 = innerDiv2 + 'l';
+
+                            a++;
+                            break;
+                        case 2:
+                        case 3:
+                            newDiv2.className = 'sq sq-m';
+                            //innerDiv2 = innerDiv2 + 'm';
+                            a++;
+                            break;
+                        case 4:
+                            newDiv2.className = 'sq sq-r';
+                            //innerDiv2 = innerDiv2 + 'r';
+                            newDiv2.id = id_for_newDiv2;
+                            a = 1;
+                            zx = 'go';
+                            // let newDiv3 = document.createElement('div');
+                            // newDiv3.className = 'collapse';
+                            // newDiv3.id = 'collapseExample';
+                            // let innerDiv3 = '<div class="card card-body"> Anim pariatur </div>';
+                            // newDiv3.innerHTML = innerDiv3;
+                            // document.getElementById('qwerty').appendChild(newDiv3);
+
+
+                            break;
+                    }
+
+                    let innerDiv2 = '<div class="sq-wrapper" type="button" data-toggle="collapse" data-target="#' + (id_div_schedule_date + 'collapseSchedule' + j) + '" aria-expanded="false" aria-controls="collapseExample"><div class="sq-content"><div class="row no-margin"><div class="text-for-sq-gr">Группа</div></div><div class="row no-margin"><div class="text-for-sq" id="';
+                    let id_div_schedule_group_name = id_div_schedule_date + 'scheduleGroupName' + j;
+                        innerDiv2 = innerDiv2 + id_div_schedule_group_name;
+                        innerDiv2 = innerDiv2 + '"></div></div></div></div>';
+                        newDiv2.innerHTML = innerDiv2;
+
+                    document.getElementById(id_schedule_row).appendChild(newDiv2);
+
+                    let element2 = document.getElementById(id_div_schedule_group_name);
+                        $(element2).append(mas[i].Course[0].Group[j].GroupName);
+
+                    if (zx == 'go') {
+                        let k = j;
+                        let c = k-3;
+                        zx = 'stop';
+                        // let newDiv4 = document.createElement('div');
+                        // newDiv4.className = 'row no-margin';
+                        // newDiv4.id = 'test';
+                        // document.getElementById(id_schedule_row).appendChild(newDiv4);
+                        for (k; k >= c; k--) {
+                            console.log(k);
+
+                            let newDiv3 = document.createElement('div');
+                            newDiv3.className = 'collapse';
+                            newDiv3.id = id_div_schedule_date + 'collapseSchedule' + k;
+                            let innerDiv3 = '<div class="cardd card-body"><table class="table table-bordered"> <thead> <tr> <th scope="col">Расписание занятий с учетом замен</th> <th scope="col">Дисциплина, МДК</th> <th scope="col">Пара</th> <th scope="col">Аудитория</th> </tr> </thead> <tbody> <tr> <th scope="row">1</th> <td>Mark</td> <td>Otto</td> <td>@mdo</td> </tr> <tr> <th scope="row">2</th> <td>Jacob</td> <td>Thornton</td> <td>@fat</td> </tr> <tr> <th scope="row">3</th> <td colspan="2">Larry the Bird</td> <td>@twitter</td> </tr> </tbody> </table></div>';
+                            newDiv3.innerHTML = innerDiv3;
+                            document.getElementById(id_schedule_row).appendChild(newDiv3);
+                            // document.getElementById('test').appendChild(newDiv3);
+                        }
+                    }
+                }
             }
         }
     }

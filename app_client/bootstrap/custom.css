@@ -180,18 +180,18 @@ html, body {padding:0; margin:0;}
 
 .sq-l {
     margin-right: 1%;
-    margin-bottom: 1%;
+    margin-bottom: 2%;
 }
 
 .sq-m {
     margin-left: 1%;
     margin-right: 1%;
-    margin-bottom: 1%;
+    margin-bottom: 2%;
 }
 
 .sq-r {
     margin-left: 1%;
-    margin-bottom: 1%;
+    margin-bottom: 2%;
 }
 
 .sq-wrapper {
@@ -222,6 +222,7 @@ html, body {padding:0; margin:0;}
 .text-for-sq {
     margin-top: 5%;
     font-size: 3vw;
+    color: #000000;
     margin-bottom: 0px;
     font-weight: bold;
 }
@@ -230,7 +231,7 @@ html, body {padding:0; margin:0;}
     margin-top: 20%;
     font-size: 2.5vw;
     margin-bottom: 0px;
-    font-weight: bold;
+
     color: #cacaca;
 }
 
@@ -255,7 +256,7 @@ hr {
     width: 100%;
 }
 
-.сourse-number {
+.course-number {
     color: #FFFFFF;
     font-size: 2vw;
     width: 100%;
@@ -267,9 +268,25 @@ hr {
 }
 
 .cardd {
-
     width:100%;
     background-color:#fff;
     background-clip:border-box;
-    border-radius: 20px
+    border-radius: 20px;
+    margin-bottom: 2%;
+}
+
+.course-number-1 {
+    width: 100%;
+    margin-bottom: 1%;
+}
+
+.text-for-sq-g {
+    color: #cacaca;
+    margin-bottom: 2%;
+}
+
+.text-for-sq-gn {
+    color: #000000;
+    margin-bottom: 2%;
+    font-weight: bold;
 }

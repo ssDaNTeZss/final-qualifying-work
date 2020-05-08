@@ -16,24 +16,7 @@ function homePageCtrl($http, $location, $scope) {
         "июля", "августа", "сентября", "октября", "ноября", "декабря");
     document.getElementById('date').innerHTML = day[d.getDay()] + ", " + d.getDate() + " " + month[d.getMonth()];
 
-    document.getElementById("hb1").onclick = function () {
-        console.log('Я есть Div');
-        console.log(hidden_content.style.height);
-
-
-        if (hidden_content.style.height === '0px') {
-            let start = Date.now();
-
-            let timer = setInterval(function () {
-                let timePassed = Date.now() - start;
-                hidden_content.style.height = timePassed / 40 + '%';
-                if (timePassed > 2000) clearInterval(timer);
-            }, 20);
-        }
-    };
-
     document.getElementById("schedule").onclick = function () {
-        console.log('Я есть Div');
         window.location.href = '/#!/schedule';
     };
 

@@ -143,6 +143,20 @@ html, body {padding:0; margin:0;}
     background-color: #FFF;
 }
 
+.help-button-x {
+    display: table-cell;
+    position: fixed;
+    /*right: 0;*/
+    left: 0;
+    bottom: 0;
+    margin: 20px;
+    width: 40mm;
+    height: 40mm;
+    border-radius: 7.8mm;
+    opacity: 0.8;
+    background-color: #FFF;
+}
+
 .help-button-2 {
     width: 30mm;
     height: 30mm;
@@ -289,4 +303,9 @@ hr {
     color: #000000;
     margin-bottom: 2%;
     font-weight: bold;
+}
+
+.divMode1 {
+    width: 100%;
+    height: 0px;
 }

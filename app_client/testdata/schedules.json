@@ -11,14 +11,10 @@
               "Discipline": {
                 "LessonNumber1": {
                   "Teacher": "TEST1РА-19-1уп",
-                  "DisciplineName": "TEST1РА-19-1уп",
+                  "DisciplineName": "",
                   "LectureRoom": "TEST1РА-19-1уп"
                 },
-                "LessonNumber2": {
-                  "Teacher": "TEST",
-                  "DisciplineName": "TEST",
-                  "LectureRoom": "TEST"
-                },
+
                 "LessonNumber3": {
                   "Teacher": "TEST",
                   "DisciplineName": "TEST",
@@ -28,16 +24,6 @@
                   "Teacher": "TEST",
                   "DisciplineName": "МДК 03.01",
                   "LectureRoom": "TEST"
-                },
-                "LessonNumber5": {
-                  "Teacher": "",
-                  "DisciplineName": "",
-                  "LectureRoom": ""
-                },
-                "LessonNumber6": {
-                  "Teacher": "",
-                  "DisciplineName": "",
-                  "LectureRoom": ""
                 }
               }
             },

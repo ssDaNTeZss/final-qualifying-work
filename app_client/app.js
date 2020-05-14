@@ -9,7 +9,23 @@ function config($routeProvider){
             templateUrl: 'views/schedule.html',
             controller: 'scheduleCtrl',
             controllerAs: 'vm'
-        }).when('/testdata-schedules', {
+        })
+        .when('/about-college', {
+            templateUrl: 'views/aboutСollege.html',
+            controller: 'aboutСollegeCtrl',
+            controllerAs: 'vm'
+        })
+        .when('/login', {
+            templateUrl: 'views/login.html',
+            controller: 'loginCtrl',
+            controllerAs: 'vm'
+        })
+        .when('/admin-home', {
+            templateUrl: 'views/adminHome.html',
+            controller: 'adminHomeCtrl',
+            controllerAs: 'vm'
+        })
+        .when('/testdata-schedules', {
         templateUrl: 'testdata/schedules.json',
         controllerAs: 'vm'
     })
@@ -20,6 +36,9 @@ function config($routeProvider){
 angular
     .module('myApp', ['ngRoute'])
     .controller('homePageCtrl', homePageCtrl)
+    .controller('aboutСollegeCtrl', aboutСollegeCtrl)
+    .controller('loginCtrl', loginCtrl)
+    .controller('adminHomeCtrl', adminHomeCtrl)
     .controller('scheduleCtrl', scheduleCtrl)
     .config(['$routeProvider', config])
     ;

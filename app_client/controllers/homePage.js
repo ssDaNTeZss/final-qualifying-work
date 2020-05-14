@@ -20,6 +20,9 @@ function homePageCtrl($http, $location, $scope) {
         window.location.href = '/#!/schedule';
     };
 
+    document.getElementById("aboutCollege").onclick = function () {
+        window.location.href = '/#!/about-college';
+    };
     // $(document).ready(function(){
     //
     //     $('#button').click(function(){

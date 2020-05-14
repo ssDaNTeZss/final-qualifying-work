@@ -4,6 +4,7 @@ let ctrlPacks = require('../controllers/packs');
 let ctrlStudents = require('../controllers/students');
 let ctrlAbsenteeisms = require('../controllers/absenteeisms');
 let ctrlAuth = require('../controllers/auth');
+let ctrlMasData = require('../controllers/masData');
 
 router.get('/packs', ctrlPacks.getAll);
 router.get('/packs/:id', ctrlPacks.getOne);
@@ -27,5 +28,7 @@ router.post('/signup', ctrlAuth.signup);
 router.post('/login', ctrlAuth.login);
 router.get('/logout/:login', ctrlAuth.logout);
 router.delete('/selfremove/:login', ctrlAuth.selfremove);
+
+router.put('/masData', ctrlMasData.update);
 
 module.exports = router;

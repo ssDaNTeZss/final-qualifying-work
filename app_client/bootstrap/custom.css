@@ -28,9 +28,9 @@ html, body {padding:0; margin:0;}
     height: 100%;
     overflow: auto;
     padding-top: 3%;
-    padding-bottom: 6%;
-    padding-left: 6%;
-    padding-right: 6%;
+    padding-bottom: 3%;
+    padding-left: 3%;
+    padding-right: 3%;
 }
 
 .main {
@@ -222,7 +222,8 @@ html, body {padding:0; margin:0;}
     padding: 5%;
     width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: #FFFFFF;
+    opacity: 0.90;
 }
 
 .img-for-sq {
@@ -245,12 +246,10 @@ html, body {padding:0; margin:0;}
     margin-top: 20%;
     font-size: 2.5vw;
     margin-bottom: 0px;
-
     color: #cacaca;
 }
 
 .div-shedule {
-
     width: 100%;
     height: 92%;
     border-radius: 20px;
@@ -283,7 +282,8 @@ hr {
 
 .cardd {
     width:100%;
-    background-color:#fff;
+    background-color: #FFFFFF;
+    opacity: 0.90;
     background-clip:border-box;
     border-radius: 20px;
     margin-bottom: 2%;
@@ -308,4 +308,81 @@ hr {
 .divMode1 {
     width: 100%;
     height: 0px;
+}
+
+.undo {
+    color: #FFFFFF;
+    font-size: 2.5vw;
+    font-weight: bold;
+}
+
+.div-aboutCollege {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin-top: 2%;
+    padding: 2%;
+    background-color: #FFFFFF;
+    opacity: 0.90;
+}
+
+
+.container-login {
+    background: url(/img/IMG_2868.png);
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding-top: 10%;
+}
+
+.bg-login-form {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+}
+
+.admin-menu {
+    background-color: #F0F0F0;
+    height: 100%;
+    box-shadow: -3px 0 5px;
+}
+
+.admin-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    margin: 0;
+}
+
+.logo {
+    height: 100%;
+    margin: auto;
+}
+
+.row-logo {
+    height: 100%;
+    padding: 0.5%;
+
+}
+
+.top-admin-menu {
+    background-color: #F0F0F0;
+    height: 8%;
+    width: 100%;
+    margin: 0;
+}
+
+.admin-content {
+    background-color: #FFFFFF;
+    box-shadow: 3px 3px 5px;
+    margin: 0;
+    width: 100%;
+    height: 100%;
 }

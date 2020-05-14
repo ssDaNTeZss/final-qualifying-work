@@ -15,40 +15,10 @@ function scheduleCtrl($http, $location, $scope) {
         "июля", "августа", "сентября", "октября", "ноября", "декабря");
     document.getElementById('date').innerHTML = day[d.getDay()] + ", " + d.getDate() + " " + month[d.getMonth()];
 
-    // document.getElementById("hb1").onclick = function () {
-    //     //
-    //     // console.log(hidden_content.style.height);
-    //     // let start = Date.now();
-    //     // let timer2 = setInterval(function () {
-    //     //     let timePassed = Date.now() - start;
-    //     //     hbx.style.height += 0.8 + 'mm';
-    //     //     hbx.style.width += 0.8 + 'mm';
-    //     //     if (timePassed > 2000) clearInterval(timer2);
-    //     // }, 20);
-    //     //
-    //
-    //     $( "#hbx" ).animate({
-    //         width: "70%",
-    //         opacity: 0.4,
-    //     }, 1500 );
-    //
-    //     // if (hidden_content.style.height === '0px') {
-    //     //     let start = Date.now();
-    //     //
-    //     //     let timer = setInterval(function () {
-    //     //         let timePassed = Date.now() - start;
-    //     //         hidden_content.style.height = timePassed / 40 + '%';
-    //     //         if (timePassed > 2000) clearInterval(timer);
-    //     //     }, 20);
-    //     //
-    //     //     let timer2 = setInterval(function () {
-    //     //         let timePassed = Date.now() - start;
-    //     //         hdx.style.height = timePassed / 2 + 'px';
-    //     //         hdx.style.width = timePassed / 2 + 'px';
-    //     //         if (timePassed > 2000) clearInterval(timer2);
-    //     //     }, 20);
-    //     // }
-    // };
+
+    $( "#undo" ).click(function() {
+        window.location.href = '/#!/';
+    });
 
     let clickHB = 0;
     let clickMode1 = 0;
@@ -190,7 +160,6 @@ function scheduleCtrl($http, $location, $scope) {
                             newDiv3.className = 'sq sq-r';
                             classSq = 1;
                             test = 3;
-                            //zx = 'go';
                             break;
                     }
 

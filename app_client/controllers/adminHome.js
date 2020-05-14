@@ -30,6 +30,7 @@ function adminHomeCtrl($http, $location, $scope) {
         let mas = jsonObj['MAS'];
 
         document.getElementById("formControlInput1").value = mas[0].DataAboutCollege.HeaderAboutCollege;
+        document.getElementById("formControlTextarea1").value = mas[0].DataAboutCollege.TextAboutCollege;
         console.log(document.getElementById("formControlInput1").value);
     }
 
@@ -38,7 +39,8 @@ function adminHomeCtrl($http, $location, $scope) {
     $( "#test" ).click(function() {
         console.log('waiting...');
         let p1 = $http.put('/api/masData', {
-            dataa: document.getElementById("formControlInput1").value
+            headerAboutCollege: document.getElementById("formControlInput1").value,
+            textAboutCollege: document.getElementById("formControlTextarea1").value,
         }, {
             headers: {
                 token: localStorage.getItem('token')

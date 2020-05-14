@@ -19,18 +19,35 @@ function aboutСollegeCtrl($http, $location, $scope) {
         window.location.href = '/#!/';
     });
 
+    let requestURL = 'testdata/masData.json';
 
-    // let p1 = $http.get('/api/packs', {
-    //     headers: {
-    //         token: localStorage.getItem('token')
-    //     }
-    // });
-    //
-    // p1.then(res => {
-    //     },
-    //     err => {
-    //         $location.path('/login');
-    //     }
-    // );
+    let request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+
+    request.onload = function() {
+        let data = request.response;
+        showAboutCollege(data);
+    };
+
+    function showAboutCollege(jsonObj) {
+        let mas = jsonObj['MAS'];
+
+        let newDiv = document.createElement("div");
+        newDiv.className = 'row-12 headerAboutCollege';
+        let idDiv = 'divHeaderAboutCollege';
+        newDiv.id = idDiv;
+        let innerDiv = mas[0].DataAboutCollege.HeaderAboutCollege;
+        newDiv.innerHTML = innerDiv;
+        document.getElementById("div-aboutCollege").appendChild(newDiv);
+
+        let newDiv2 = document.createElement("div");
+        newDiv2.className = 'row-12 textAboutCollege';
+        newDiv2.id = 'divTextAboutCollege';
+        let innerDiv2 = mas[0].DataAboutCollege.TextAboutCollege;
+        newDiv2.innerHTML = innerDiv2;
+        document.getElementById("div-aboutCollege").appendChild(newDiv2);
+    }
 
 }

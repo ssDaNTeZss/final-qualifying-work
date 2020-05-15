@@ -21,8 +21,20 @@ module.exports.update = async (req, res, next) => {
         db.set('MAS[0].DataAboutCollege.HeaderAboutCollege', req.body.headerAboutCollege)
             .write();
     }
+
     if(req.body.textAboutCollege){
         db.set('MAS[0].DataAboutCollege.TextAboutCollege', req.body.textAboutCollege)
             .write();
     }
+
+    if(req.body.headerWorkSchedule){
+        db.set('MAS[1].DataWorkSchedule.HeaderWorkSchedule', req.body.headerWorkSchedule)
+            .write();
+    }
+
+    if(req.body.textWorkSchedule){
+        db.set('MAS[1].DataWorkSchedule.TextWorkSchedule', req.body.textWorkSchedule)
+            .write();
+    }
+
 };

@@ -25,6 +25,11 @@ function config($routeProvider){
             controller: 'adminHomeCtrl',
             controllerAs: 'vm'
         })
+        .when('/governance', {
+            templateUrl: 'views/governance.html',
+            controller: 'governanceCtrl',
+            controllerAs: 'vm'
+        })
         .when('/testdata-schedules', {
         templateUrl: 'testdata/schedules.json',
         controllerAs: 'vm'
@@ -39,6 +44,7 @@ angular
     .controller('aboutСollegeCtrl', aboutСollegeCtrl)
     .controller('loginCtrl', loginCtrl)
     .controller('adminHomeCtrl', adminHomeCtrl)
+    .controller('governanceCtrl', governanceCtrl)
     .controller('scheduleCtrl', scheduleCtrl)
     .config(['$routeProvider', config])
     ;

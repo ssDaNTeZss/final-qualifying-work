@@ -113,6 +113,9 @@ html, body {padding:0; margin:0;}
 .no-margin {
     margin: 0;
 }
+.no-margin-bottom {
+    margin-bottom: 0;
+}
 
 .no-padding {
     padding: 0;
@@ -246,7 +249,7 @@ html, body {padding:0; margin:0;}
     margin-top: 20%;
     font-size: 2.5vw;
     margin-bottom: 0px;
-    color: #cacaca;
+    color: #919191;
 }
 
 .div-shedule {
@@ -295,7 +298,7 @@ hr {
 }
 
 .text-for-sq-g {
-    color: #cacaca;
+    color: #919191;
     margin-bottom: 2%;
 }
 
@@ -320,7 +323,7 @@ hr {
     width: 100%;
     height: auto;
     border-radius: 20px;
-    margin-top: 2%;
+    margin-top: 5%;
     padding: 2%;
     background-color: #FFFFFF;
     opacity: 0.90;
@@ -389,7 +392,7 @@ hr {
 
 .headerAboutCollege {
     margin: 0;
-    color: #000000;
+    color: #919191;
     font-size: 3.5vw;
     font-weight: bold;
 }
@@ -397,4 +400,115 @@ hr {
 .textAboutCollege {
     margin: 0;
     color: #000000;
+}
+
+.block-work-schedule-SE-l {
+    background-color:#fff;
+    width: 98%;
+    border-radius: 20px;
+    padding: 5%;
+    margin-right: 2%;
+    opacity: 0.90;
+    height: 100%;
+}
+
+.block-work-schedule-r {
+    background-color:#fff;
+    width: 98%;
+    border-radius: 20px;
+    padding: 5%;
+    margin-bottom: 3%;
+    margin-left: 2%;
+    opacity: 0.90;
+}
+
+.block-work-schedule-r-down {
+    background-color:#fff;
+    width: 98%;
+    border-radius: 20px;
+    padding: 5%;
+    margin-left: 2%;
+    opacity: 0.90;
+}
+
+.row-for-block {
+    margin: 2% 0 0 0;
+    height: auto;
+}
+
+.header-work-schedule {
+    color: #919191;
+    font-size: 3vw;
+    font-weight: bold;
+    margin: 0;
+}
+
+.text-work-schedule {
+    color: #000000;
+    font-size: 2vw;
+    font-weight: bold;
+    margin: 5% 0 0 5%;
+}
+
+.content {
+    width: 100%;
+    margin-top: 2%;
+}
+
+.div-header {
+    color: #FFFFFF;
+    font-size: 3.5vw;
+    font-weight: bold;
+    margin-bottom: 1%;
+}
+
+.div-header-2 {
+    color: #FFFFFF;
+    font-size: 3vw;
+    font-weight: bold;
+    margin-bottom: 1%;
+}
+
+.block-governance {
+    background-color:#fff;
+    width: 100%;
+    border-radius: 20px;
+    padding: 2%;
+    margin-bottom: 3%;
+    opacity: 0.90;
+}
+
+.header-for-governance {
+    color: #919191;
+    font-size: 2.5vw;
+    font-weight: bold;
+    margin: 2% 0 1% 0;
+}
+
+.name-governance {
+    color: #000000;
+    font-size: 3vw;
+    font-weight: bold;
+    margin: 0;
+}
+
+.info-governance {
+    color: #000000;
+    font-size: 1.8vw;
+    padding: 0;
+    display: flex;
+    align-items: flex-end;
+}
+.info-governance-place {
+    color: #000000;
+    font-size: 1.8vw;
+    padding: 0;
+}
+
+
+.info-governance-pl {
+    color: #000000;
+    font-size: 1.8vw;
+    padding: 0;
+    margin-bottom: 1%;
 }

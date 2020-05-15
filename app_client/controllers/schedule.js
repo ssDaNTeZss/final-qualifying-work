@@ -58,7 +58,7 @@ function scheduleCtrl($http, $location, $scope) {
     });
 
 
-    $( "#div-schedule" ).click(function() {
+    $( "#containerBgPlus" ).click(function() {
         $( "#hb1" ).animate({
             width: "40mm",
         }, 500 );

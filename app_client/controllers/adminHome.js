@@ -28,27 +28,41 @@ function adminHomeCtrl($http, $location, $scope) {
 
     function showText(jsonObj) {
         let mas = jsonObj['MAS'];
-
         document.getElementById("formControlInput1").value = mas[0].DataAboutCollege.HeaderAboutCollege;
         document.getElementById("formControlTextarea1").value = mas[0].DataAboutCollege.TextAboutCollege;
-        console.log(document.getElementById("formControlInput1").value);
+        document.getElementById("formControlInput2").value = mas[1].DataWorkSchedule.HeaderWorkSchedule;
+        document.getElementById("formControlTextarea2").value = mas[1].DataWorkSchedule.TextWorkSchedule;
     }
 
 // console.log(document.getElementById("formControlInput1").value);
 
-    $( "#test" ).click(function() {
-        console.log('waiting...');
-        let p1 = $http.put('/api/masData', {
-            headerAboutCollege: document.getElementById("formControlInput1").value,
-            textAboutCollege: document.getElementById("formControlTextarea1").value,
-        }, {
-            headers: {
-                token: localStorage.getItem('token')
-            }
-        });
-
-
+    $( "#updateDataAboutCollege" ).click(function() {
+        let isQ = confirm("Вы уверены? Это внесет изменения...");
+        if (isQ) {
+            let p1 = $http.put('/api/masData', {
+                headerAboutCollege: document.getElementById("formControlInput1").value,
+                textAboutCollege: document.getElementById("formControlTextarea1").value,
+            }, {
+                headers: {
+                    token: localStorage.getItem('token')
+                }
+            });
+        }
     });
 
+    $( "#updateDataWorkSchedule" ).click(function() {
+        let isQ2 = confirm("Вы уверены? Это внесет изменения...");
+
+        if (isQ2) {
+            let p1 = $http.put('/api/masData', {
+                headerWorkSchedule: document.getElementById("formControlInput2").value,
+                textWorkSchedule: document.getElementById("formControlTextarea2").value,
+            }, {
+                headers: {
+                    token: localStorage.getItem('token')
+                }
+            });
+        }
+    });
 
 }

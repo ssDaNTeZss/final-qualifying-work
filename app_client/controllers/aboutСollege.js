@@ -19,6 +19,17 @@ function aboutСollegeCtrl($http, $location, $scope) {
         window.location.href = '/#!/';
     });
 
+    $( "#divGovernance" ).click(function() {
+        window.location.href = '/#!/governance';
+    });
+
+    $( "#containerBgPlus" ).click(function() {
+        $( "#hb1" ).animate({
+            width: "40mm",
+        }, 500 );
+    });
+
+
     let requestURL = 'testdata/masData.json';
 
     let request = new XMLHttpRequest();
@@ -33,6 +44,9 @@ function aboutСollegeCtrl($http, $location, $scope) {
 
     function showAboutCollege(jsonObj) {
         let mas = jsonObj['MAS'];
+
+        document.getElementById("divHeaderAboutCollege").innerHTML += mas[1].DataWorkSchedule.HeaderWorkSchedule;
+        document.getElementById("divTextWorkSchedule").innerHTML += mas[1].DataWorkSchedule.TextWorkSchedule;
 
         let newDiv = document.createElement("div");
         newDiv.className = 'row-12 headerAboutCollege';

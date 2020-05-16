@@ -20,14 +20,24 @@ function config($routeProvider){
             controller: 'loginCtrl',
             controllerAs: 'vm'
         })
+        .when('/logout', {
+            templateUrl: 'views/logout.html',
+            controller: 'logoutCtrl',
+            controllerAs: 'vm'
+        })
         .when('/admin-home', {
             templateUrl: 'views/adminHome.html',
             controller: 'adminHomeCtrl',
             controllerAs: 'vm'
         })
         .when('/governance', {
-            templateUrl: 'views/governance.html',
-            controller: 'governanceCtrl',
+        templateUrl: 'views/governance.html',
+        controller: 'governanceCtrl',
+        controllerAs: 'vm'
+        })
+        .when('/admin-governance', {
+            templateUrl: 'views/adminGovernance.html',
+            controller: 'adminGovernanceCtrl',
             controllerAs: 'vm'
         })
         .when('/testdata-schedules', {
@@ -43,8 +53,10 @@ angular
     .controller('homePageCtrl', homePageCtrl)
     .controller('aboutСollegeCtrl', aboutСollegeCtrl)
     .controller('loginCtrl', loginCtrl)
+    .controller('logoutCtrl', logoutCtrl)
     .controller('adminHomeCtrl', adminHomeCtrl)
     .controller('governanceCtrl', governanceCtrl)
     .controller('scheduleCtrl', scheduleCtrl)
+    .controller('adminGovernanceCtrl', adminGovernanceCtrl)
     .config(['$routeProvider', config])
     ;

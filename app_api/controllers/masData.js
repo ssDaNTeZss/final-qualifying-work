@@ -16,7 +16,6 @@ module.exports.update = async (req, res, next) => {
         return;
     }
 
-
     if(req.body.headerAboutCollege){
         db.set('MAS[0].DataAboutCollege.HeaderAboutCollege', req.body.headerAboutCollege)
             .write();
@@ -37,4 +36,31 @@ module.exports.update = async (req, res, next) => {
             .write();
     }
 
+    if(req.body.positionGovernance){
+        if (req.body.indexGovernance == 0) {
+            db.set('MAS[2].Governance[' + req.body.indexGovernance + '].Director.Position', req.body.positionGovernance)
+                .write();
+            db.set('MAS[2].Governance[' + req.body.indexGovernance + '].Director.FullName', req.body.fullNameGovernance)
+                .write();
+            db.set('MAS[2].Governance[' + req.body.indexGovernance + '].Director.Telephone', req.body.telephoneGovernance)
+                .write();
+            db.set('MAS[2].Governance[' + req.body.indexGovernance + '].Director.Email', req.body.emailGovernance)
+                .write();
+            db.set('MAS[2].Governance[' + req.body.indexGovernance + '].Director.Location', req.body.locationGovernance)
+                .write();
+            db.set('MAS[2].Governance[' + req.body.indexGovernance + '].Director.Additionally', req.body.additionallyGovernance)
+                .write();
+        } else {
+            db.set('MAS[2].Governance[' + req.body.indexGovernance + '].Position', req.body.positionGovernance)
+                .write();
+            db.set('MAS[2].Governance[' + req.body.indexGovernance + '].FullName', req.body.fullNameGovernance)
+                .write();
+            db.set('MAS[2].Governance[' + req.body.indexGovernance + '].Telephone', req.body.telephoneGovernance)
+                .write();
+            db.set('MAS[2].Governance[' + req.body.indexGovernance + '].Email', req.body.emailGovernance)
+                .write();
+            db.set('MAS[2].Governance[' + req.body.indexGovernance + '].Location', req.body.locationGovernance)
+                .write();
+        }
+    }
 };

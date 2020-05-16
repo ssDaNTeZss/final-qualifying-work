@@ -42,7 +42,6 @@ function governanceCtrl($http, $location, $scope) {
         document.getElementById("directorEmail").innerHTML += director.Email;
         document.getElementById("directorLocation").innerHTML += director.Location;
 
-console.log(mas[2].Governance.length);
         for (let a = 1; a < mas[2].Governance.length; a++) {
             let newDiv = document.createElement('div');
             newDiv.className = 'block-governance';

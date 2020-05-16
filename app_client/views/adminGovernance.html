@@ -36,16 +36,16 @@
                 <i class="fas fa-fw fa-list-alt"></i>
                 <span>Руководство (governance)</span></a>
         </li>
-<!--        <li class="nav-item">-->
-<!--            <a class="nav-link" href="/#!/list-students">-->
-<!--                <i class="fas fa-fw fa-tachometer-alt"></i>-->
-<!--                <span>Обучающиеся</span></a>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--            <a class="nav-link" href="/#!/list-packs">-->
-<!--                <i class="fas fa-fw fa-tachometer-alt"></i>-->
-<!--                <span>Группы</span></a>-->
-<!--        </li>-->
+        <!--        <li class="nav-item">-->
+        <!--            <a class="nav-link" href="/#!/list-students">-->
+        <!--                <i class="fas fa-fw fa-tachometer-alt"></i>-->
+        <!--                <span>Обучающиеся</span></a>-->
+        <!--        </li>-->
+        <!--        <li class="nav-item">-->
+        <!--            <a class="nav-link" href="/#!/list-packs">-->
+        <!--                <i class="fas fa-fw fa-tachometer-alt"></i>-->
+        <!--                <span>Группы</span></a>-->
+        <!--        </li>-->
 
         <!-- Divider -->
         <hr class="sidebar-divider">
@@ -65,7 +65,7 @@
 
             <!-- Topbar -->
             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                <div class="sidebar-brand-text mx-3"><h5>Колледж (aboutCollege)</h5></div>
+                <div class="sidebar-brand-text mx-3"><h5>Руководство (governance)</h5></div>
 
                 <ul class="navbar-nav ml-auto">
                     <a href="/#!/logout" class="btn btn-secondary btn-icon-split">
@@ -79,44 +79,32 @@
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
-            <div class="row no-margin container-fluid">
-                <div class="col-8">
-                <form>
-                    <div class="form-group">
-                        <label for="formControlInput1">Заголовок блока "Колледж"</label>
-                        <input type="text" class="form-control" id="formControlInput1">
-                    </div>
-                    <div class="form-group">
-                        <label for="formControlTextarea1">Текст блока "Колледж"</label>
-                        <textarea class="form-control" id="formControlTextarea1" name="nameFormControlTextarea1" rows="20"></textarea>
-                    </div>
-                    <button class="btn btn-success btn-icon-split"
-                            type="submit" id="updateDataAboutCollege"> <span
-                            class="icon text-white-50">
-                      <i class="fa fa-check"></i>
-                    </span>
-                        <span class="text">Изменить</span>
-                    </button>
-                </form>
-                </div>
+            <div class="row no-margin container-fluid" id="contentForm">
                 <div class="col-4">
                     <form>
                         <div class="form-group">
-                            <label for="formControlInput2">Заголовок блока "Режим и график работы"</label>
-                            <input type="text" class="form-control" id="formControlInput2">
+                            <label for="exampleFormControlSelect1">Example select</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                            </select>
                         </div>
-                        <div class="form-group">
-                            <label for="formControlTextarea2">Текст блока "Режим и график работы"</label>
-                            <textarea class="form-control" id="formControlTextarea2" name="nameFormControlTextarea2" rows="20"></textarea>
-                        </div>
-                        <button class="btn btn-success btn-icon-split"
-                                type="submit" id="updateDataWorkSchedule"> <span
-                                class="icon text-white-50">
-                      <i class="fa fa-check"></i>
-                    </span>
-                            <span class="text">Изменить</span>
+                        <button class="btn btn btn-info btn-icon-split" type="submit" id="updateDataAboutCollege">
+                            <span class="icon text-white-50">
+                                <i class="fa fa-search"></i>
+                            </span>
+                            <span class="text">Найти</span>
                         </button>
                     </form>
+                </div>
+                <div class="col-8" id="divUpdateGovernance">
+                    </div>
+                <div class="col-4"></div>
+                <div class="col-8">
+                    <button class="btn btn btn-success btn-icon-split" style="display: none" type="submit" id="updateDataGovernance2">
+                        <span class="icon text-white-50">
+                            <i class="fa fa-check"></i>
+                        </span>
+                        <span class="text">Изменить</span>
+                    </button>
                 </div>
             </div>
         </div>

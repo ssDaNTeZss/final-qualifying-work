@@ -23,6 +23,10 @@ function aboutСollegeCtrl($http, $location, $scope) {
         window.location.href = '/#!/governance';
     });
 
+    $( "#divStructureAndGoverningBodies" ).click(function() {
+        window.location.href = '/#!/structure-and-governing-bodies';
+    });
+
     $( "#containerBgPlus" ).click(function() {
         $( "#hb1" ).animate({
             width: "40mm",

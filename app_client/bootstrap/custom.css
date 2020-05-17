@@ -329,6 +329,10 @@ hr {
     opacity: 0.90;
 }
 
+.divContent {
+    width: 100%;
+    height: auto;
+}
 
 .container-login {
     background: url(/img/IMG_2868.png);
@@ -511,4 +515,58 @@ hr {
     font-size: 1.8vw;
     padding: 0;
     margin-bottom: 1%;
+}
+
+.header1 {
+    margin-bottom: 2% 0 2% 0;
+    color: #FFFFFF;
+    font-size: 3.5vw;
+    font-weight: bold;
+    padding: 0;
+}
+
+.header2 {
+     margin: 0;
+     color: #919191;
+     font-size: 3vw;
+     font-weight: bold;
+}
+
+.header2-W{
+    margin: 0;
+    color: #FFFFFF;
+    font-size: 3vw;
+    font-weight: bold;
+}
+
+.header3 {
+    margin: 0;
+    color: #919191;
+    font-size: 2.5vw;
+    font-weight: bold;
+    margin-top: 2%;
+}
+
+.header3-no-margin {
+    margin: 0;
+    color: #919191;
+    font-size: 2.5vw;
+    font-weight: bold;
+}
+
+.text2vw {
+    color: #333;
+    font-size: 2vw;
+    font-weight: bold;
+    margin: 1% 0 0 2%;
+}
+
+.block-SaGB {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin: 2% 0 2% 0;
+    padding: 2%;
+    background-color: #FFFFFF;
+    opacity: 0.90;
 }

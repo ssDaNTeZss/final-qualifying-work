@@ -23,6 +23,10 @@ function homePageCtrl($http, $location, $scope) {
     document.getElementById("aboutCollege").onclick = function () {
         window.location.href = '/#!/about-college';
     };
+
+    document.getElementById("enrollee").onclick = function () {
+        window.location.href = '/#!/enrollee';
+    };
     // $(document).ready(function(){
     //
     //     $('#button').click(function(){

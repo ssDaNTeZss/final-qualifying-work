@@ -25,9 +25,9 @@ function config($routeProvider){
             controller: 'logoutCtrl',
             controllerAs: 'vm'
         })
-        .when('/admin-home', {
-            templateUrl: 'views/adminHome.html',
-            controller: 'adminHomeCtrl',
+        .when('/enrollee', {
+            templateUrl: 'views/enrollee.html',
+            controller: 'enrolleeCtrl',
             controllerAs: 'vm'
         })
         .when('/governance', {
@@ -38,6 +38,11 @@ function config($routeProvider){
         .when('/structure-and-governing-bodies', {
             templateUrl: 'views/structureAndGoverningBodies.html',
             controller: 'structureAndGoverningBodiesCtrl',
+            controllerAs: 'vm'
+        })
+        .when('/admin-home', {
+            templateUrl: 'views/adminHome.html',
+            controller: 'adminHomeCtrl',
             controllerAs: 'vm'
         })
         .when('/admin-governance', {
@@ -59,10 +64,11 @@ angular
     .controller('aboutСollegeCtrl', aboutСollegeCtrl)
     .controller('loginCtrl', loginCtrl)
     .controller('logoutCtrl', logoutCtrl)
-    .controller('adminHomeCtrl', adminHomeCtrl)
+    .controller('enrolleeCtrl', enrolleeCtrl)
     .controller('governanceCtrl', governanceCtrl)
     .controller('structureAndGoverningBodiesCtrl', structureAndGoverningBodiesCtrl)
     .controller('scheduleCtrl', scheduleCtrl)
+    .controller('adminHomeCtrl', adminHomeCtrl)
     .controller('adminGovernanceCtrl', adminGovernanceCtrl)
     .config(['$routeProvider', config])
     ;

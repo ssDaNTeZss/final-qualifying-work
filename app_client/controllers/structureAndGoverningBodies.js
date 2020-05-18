@@ -6,7 +6,7 @@ function structureAndGoverningBodiesCtrl($http, $location, $scope) {
             h = (h < 10) ? '0' + h : h,
             m = (m < 10) ? '0' + m : m,
             document.getElementById('time').innerHTML = h + ':' + m;
-    }, 1000);
+    }, 500);
 
     let d = new Date();
     let day = new Array("Воскресенье", "Понедельник", "Вторник",

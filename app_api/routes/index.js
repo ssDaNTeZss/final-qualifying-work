@@ -1,10 +1,11 @@
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
 let ctrlPacks = require('../controllers/packs');
 let ctrlStudents = require('../controllers/students');
 let ctrlAbsenteeisms = require('../controllers/absenteeisms');
 let ctrlAuth = require('../controllers/auth');
 let ctrlMasData = require('../controllers/masData');
+let ctrlUpload = require('../controllers/upload');
 
 router.get('/packs', ctrlPacks.getAll);
 router.get('/packs/:id', ctrlPacks.getOne);
@@ -30,5 +31,7 @@ router.get('/logout/:login', ctrlAuth.logout);
 router.delete('/selfremove/:login', ctrlAuth.selfremove);
 
 router.put('/masData', ctrlMasData.update);
+router.delete('/masData/:index', ctrlMasData.delete);
+router.post('/masData', ctrlUpload.single('image'), ctrlMasData.create);
 
 module.exports = router;

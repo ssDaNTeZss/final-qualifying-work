@@ -570,3 +570,9 @@ hr {
     background-color: #FFFFFF;
     opacity: 0.90;
 }
+
+.text1-5vw {
+    color: #333;
+    font-size: 1.5vw;
+    margin: 1% 0 0 2%;
+}

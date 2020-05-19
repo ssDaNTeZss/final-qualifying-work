@@ -72,7 +72,6 @@ function adminGovernanceCtrl($http, $location, $scope) {
             document.getElementById("formControlInput4").value = mas[2].Governance[objSel.options.selectedIndex].Location;
         }
         status = 1;
-        console.log(objSel.options.selectedIndex);
         document.getElementById('updateDataGovernance2' ).style.display = 'block';
     });
 

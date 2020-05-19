@@ -1,7 +1,7 @@
 let mongoose = require('mongoose');
 let token = mongoose.model('token');
 const h = require('../helpers/common');
-let fs = require('fs');
+
 
 const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
@@ -63,4 +63,38 @@ module.exports.update = async (req, res, next) => {
                 .write();
         }
     }
+
+    if(req.body.titleEnrolleeNews){
+        db.set('MAS[5].EnrolleeNews[' + req.body.indexEnrolleeNews + '].Title', req.body.titleEnrolleeNews)
+            .write();
+        db.set('MAS[5].EnrolleeNews[' + req.body.indexEnrolleeNews + '].Subtitle', req.body.subtitleEnrolleeNews)
+            .write();
+        db.set('MAS[5].EnrolleeNews[' + req.body.indexEnrolleeNews + '].Text', req.body.textEnrolleeNews)
+            .write();
+    }
+
+    h.sendJsonResponse(res, 200);
+};
+
+module.exports.delete = async (req, res, next) => {
+    if(!await h.isValidToken(req.headers.token)){
+        h.sendJsonResponse(res, 401, {error: 'unauthorized'});
+        return;
+    }
+
+    // db.get('MAS[5].EnrolleeNews[1]')
+    //     .remove('Subtitle')
+    //     .write();
+
+    if (req.params.index) {
+        db.unset('MAS[5].EnrolleeNews[' + req.params.index + ']')
+            .write();
+    }
+};
+
+module.exports.create = async function (req, res) {
+    db.set('MAS[4].UploadImg[0].name', req.body.name)
+        .write();
+    db.set('MAS[4].UploadImg[0].imageSrc', req.file ? req.file.path : '')
+        .write();
 };

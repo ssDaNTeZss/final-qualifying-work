@@ -15,6 +15,8 @@ function aboutСollegeCtrl($http, $location, $scope) {
         "июля", "августа", "сентября", "октября", "ноября", "декабря");
     document.getElementById('date').innerHTML = day[d.getDay()] + ", " + d.getDate() + " " + month[d.getMonth()];
 
+
+
     $( "#undo" ).click(function() {
         window.location.href = '/#!/';
     });

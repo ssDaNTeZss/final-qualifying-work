@@ -1,4 +1,4 @@
-function enrolleeCtrl($http, $location, $scope) {
+function studentCtrl($http, $location, $scope) {
     setInterval(function () {
         date = new Date(),
             h = date.getHours(),
@@ -28,23 +28,23 @@ function enrolleeCtrl($http, $location, $scope) {
 
     request.onload = function() {
         let data = request.response;
-        showEnrolleeNews(data);
+        showNewsForStudents(data);
     };
 
-    function showEnrolleeNews(jsonObj) {
+    function showNewsForStudents(jsonObj) {
         let mas = jsonObj['MAS'];
 
-        let masEnrolleeNews = mas[5].NewsForEnrollee;
+        let masNewsForStudents = mas[6].NewsForStudents;
 
-        for (let a = 0; a < masEnrolleeNews.length; a++) {
+        for (let a = 0; a < masNewsForStudents.length; a++) {
             let newDiv = document.createElement("div");
             newDiv.className = 'col-12 block-SaGB';
-            let idEnrolleeNews = 'EnrolleeNews' + a;
+            let idNewsForStudents = 'NewsForStudents' + a;
 
-            newDiv.innerHTML = '<div data-toggle="collapse" data-target="#' + idEnrolleeNews + '" aria-expanded="false" aria-controls="collapseExample">' +
-                '<div class="row header3-no-margin">'+ masEnrolleeNews[a].Title + '</div>' +
-                '<div class="row text2vw">' + masEnrolleeNews[a].Subtitle + '</div>' +
-                '<div class="row text2vw"><div class="collapse" id="' + idEnrolleeNews + '">' + masEnrolleeNews[a].Text + '</div></div></div>';
+            newDiv.innerHTML = '<div data-toggle="collapse" data-target="#' + idNewsForStudents + '" aria-expanded="false" aria-controls="collapseExample">' +
+                '<div class="row header3-no-margin">'+ masNewsForStudents[a].Title + '</div>' +
+                '<div class="row text2vw">' + masNewsForStudents[a].Subtitle + '</div>' +
+                '<div class="row text1-8vw"><div class="collapse" id="' + idNewsForStudents + '">' + masNewsForStudents[a].Text + '</div></div></div>';
 
             document.getElementById("divContent").appendChild(newDiv);
         }

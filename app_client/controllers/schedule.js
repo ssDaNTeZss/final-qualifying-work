@@ -6,7 +6,7 @@ function scheduleCtrl($http, $location, $scope) {
             h = (h < 10) ? '0' + h : h,
             m = (m < 10) ? '0' + m : m,
             document.getElementById('time').innerHTML = h + ':' + m;
-    }, 1000);
+    }, 500);
 
     let d = new Date();
     let day = new Array("Воскресенье", "Понедельник", "Вторник",
@@ -64,8 +64,20 @@ function scheduleCtrl($http, $location, $scope) {
         }, 500 );
     });
 
+    let requestURLDATA = 'testdata/masData.json';
 
-    let requestURL = 'testdata/schedules.json';
+    let requestDATA = new XMLHttpRequest();
+    requestDATA.open('GET', requestURLDATA);
+    requestDATA.responseType = 'json';
+    requestDATA.send();
+
+    requestDATA.onload = function() {
+        urlForSchedule = requestDATA.response;
+        //console.log(urlForSchedule.ConnectionSetup.UrlForSchedule);
+
+
+    let requestURL = urlForSchedule.ConnectionSetup.UrlForSchedule;
+    console.log(requestURL);
 
     let request = new XMLHttpRequest();
     request.open('GET', requestURL);
@@ -76,7 +88,7 @@ function scheduleCtrl($http, $location, $scope) {
         let data = request.response;
         showSchedule(data);
     };
-
+    };
     function showSchedule(jsonObj) {
         let mas = jsonObj['MAS'];
 

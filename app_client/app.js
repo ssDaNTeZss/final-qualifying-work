@@ -30,6 +30,11 @@ function config($routeProvider){
             controller: 'enrolleeCtrl',
             controllerAs: 'vm'
         })
+        .when('/student', {
+            templateUrl: 'views/student.html',
+            controller: 'studentCtrl',
+            controllerAs: 'vm'
+        })
         .when('/governance', {
         templateUrl: 'views/governance.html',
         controller: 'governanceCtrl',
@@ -50,9 +55,19 @@ function config($routeProvider){
             controller: 'adminGovernanceCtrl',
             controllerAs: 'vm'
         })
-        .when('/admin-structure-and-governing-bodies', {
-            templateUrl: 'views/adminStructureAndGoverningBodies.html',
-            controller: 'adminStructureAndGoverningBodiesCtrl',
+        .when('/admin-enrollee', {
+            templateUrl: 'views/adminEnrollee.html',
+            controller: 'adminEnrolleeCtrl',
+            controllerAs: 'vm'
+        })
+        .when('/admin-student', {
+            templateUrl: 'views/adminStudent.html',
+            controller: 'adminStudentCtrl',
+            controllerAs: 'vm'
+        })
+        .when('/admin-other-settings', {
+            templateUrl: 'views/adminOtherSettings.html',
+            controller: 'adminOtherSettingsCtrl',
             controllerAs: 'vm'
         })
         .when('/testdata-schedules', {
@@ -70,11 +85,14 @@ angular
     .controller('loginCtrl', loginCtrl)
     .controller('logoutCtrl', logoutCtrl)
     .controller('enrolleeCtrl', enrolleeCtrl)
+    .controller('studentCtrl', studentCtrl)
     .controller('governanceCtrl', governanceCtrl)
     .controller('structureAndGoverningBodiesCtrl', structureAndGoverningBodiesCtrl)
     .controller('scheduleCtrl', scheduleCtrl)
     .controller('adminHomeCtrl', adminHomeCtrl)
     .controller('adminGovernanceCtrl', adminGovernanceCtrl)
-    .controller('adminStructureAndGoverningBodiesCtrl', adminStructureAndGoverningBodiesCtrl)
+    .controller('adminEnrolleeCtrl', adminEnrolleeCtrl)
+    .controller('adminStudentCtrl', adminStudentCtrl)
+    .controller('adminOtherSettingsCtrl', adminOtherSettingsCtrl)
     .config(['$routeProvider', config])
     ;

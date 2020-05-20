@@ -1,4 +1,5 @@
 function homePageCtrl($http, $location, $scope) {
+    monitoringInactivity ();
 
     setInterval(function () {
         date = new Date(),
@@ -7,7 +8,7 @@ function homePageCtrl($http, $location, $scope) {
             h = (h < 10) ? '0' + h : h,
             m = (m < 10) ? '0' + m : m,
             document.getElementById('time').innerHTML = h + ':' + m;
-    }, 2000);
+    }, 500);
 
     var d = new Date();
     var day = new Array("Воскресенье", "Понедельник", "Вторник",
@@ -27,6 +28,11 @@ function homePageCtrl($http, $location, $scope) {
     document.getElementById("enrollee").onclick = function () {
         window.location.href = '/#!/enrollee';
     };
+
+    document.getElementById("student").onclick = function () {
+        window.location.href = '/#!/student';
+    };
+
     // $(document).ready(function(){
     //
     //     $('#button').click(function(){

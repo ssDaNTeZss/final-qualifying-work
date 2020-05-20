@@ -65,11 +65,25 @@ module.exports.update = async (req, res, next) => {
     }
 
     if(req.body.titleEnrolleeNews){
-        db.set('MAS[5].EnrolleeNews[' + req.body.indexEnrolleeNews + '].Title', req.body.titleEnrolleeNews)
+        db.set('MAS[5].NewsForEnrollee[' + req.body.indexEnrolleeNews + '].Title', req.body.titleEnrolleeNews)
             .write();
-        db.set('MAS[5].EnrolleeNews[' + req.body.indexEnrolleeNews + '].Subtitle', req.body.subtitleEnrolleeNews)
+        db.set('MAS[5].NewsForEnrollee[' + req.body.indexEnrolleeNews + '].Subtitle', req.body.subtitleEnrolleeNews)
             .write();
-        db.set('MAS[5].EnrolleeNews[' + req.body.indexEnrolleeNews + '].Text', req.body.textEnrolleeNews)
+        db.set('MAS[5].NewsForEnrollee[' + req.body.indexEnrolleeNews + '].Text', req.body.textEnrolleeNews)
+            .write();
+    }
+
+    if(req.body.titleStudentNews){
+        db.set('MAS[6].NewsForStudents[' + req.body.indexStudentNews + '].Title', req.body.titleStudentNews)
+            .write();
+        db.set('MAS[6].NewsForStudents[' + req.body.indexStudentNews + '].Subtitle', req.body.subtitleStudentNews)
+            .write();
+        db.set('MAS[6].NewsForStudents[' + req.body.indexStudentNews + '].Text', req.body.textStudentNews)
+            .write();
+    }
+
+    if(req.body.urlForSchedule){
+        db.set('ConnectionSetup.UrlForSchedule', req.body.urlForSchedule)
             .write();
     }
 
@@ -87,8 +101,9 @@ module.exports.delete = async (req, res, next) => {
     //     .write();
 
     if (req.params.index) {
-        db.unset('MAS[5].EnrolleeNews[' + req.params.index + ']')
+        db.unset('MAS[5].NewsForEnrollee[' + req.params.index + ']')
             .write();
+
     }
 };
 

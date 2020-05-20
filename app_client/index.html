@@ -105,6 +105,23 @@
                 break;
         }
     });
+
+
+    function monitoringInactivity () {
+    let to = 5 * 60 * 1000, ts = 0;
+
+
+        addEventListener('mousemove', () => {
+            ts = Date.now();
+            console.log("Пользователь активен");
+        });
+
+        setInterval(() => {
+            if (Date.now() - ts > to) {
+                window.location.href = '/#!/';
+            }
+        }, 1000);
+    }
 </script>
 
 <script src="controllers/homePage.js"></script>
@@ -114,10 +131,13 @@
 <script src="controllers/adminHome.js"></script>
 <script src="controllers/governance.js"></script>
 <script src="controllers/enrollee.js"></script>
+<script src="controllers/student.js"></script>
 <script src="controllers/structureAndGoverningBodies.js"></script>
 <script src="controllers/schedule.js"></script>
 <script src="controllers/adminGovernance.js"></script>
-<script src="controllers/adminStructureAndGoverningBodies.js"></script>
+<script src="controllers/adminEnrollee.js"></script>
+<script src="controllers/adminStudent.js"></script>
+<script src="controllers/adminOtherSettings.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

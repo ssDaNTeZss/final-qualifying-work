@@ -1,4 +1,4 @@
-function adminStructureAndGoverningBodiesCtrl($http, $location, $scope) {
+function adminEnrolleeCtrl($http, $location, $scope) {
     let p1 = $http.get('/api/packs', {
         headers: {
             token: localStorage.getItem('token')
@@ -26,20 +26,25 @@ function adminStructureAndGoverningBodiesCtrl($http, $location, $scope) {
 
     request.onload = function() {
         let data = request.response;
-        showgGovernance(data);
+        showNewsForEnrollee(data);
     };
 
-    function showgGovernance(jsonObj) {
+    function showNewsForEnrollee(jsonObj) {
         mas = jsonObj['MAS'];
 
-        for (let a = 0; a < mas[5].EnrolleeNews.length; a++) {
+        for (let a = 0; a < mas[5].NewsForEnrollee.length; a++) {
             objSelValue = "str" + a;
-            objSel.options[a] = new Option(mas[5].EnrolleeNews[a].Title, objSelValue);
+            objSel.options[a] = new Option(mas[5].NewsForEnrollee[a].Title, objSelValue);
         }
     }
 
     $( "#searchForNews" ).click(function() {
+        if (status == 1) {
+            document.getElementById("formNewsForEnrollee").remove();
+        }
+
         let newForm = document.createElement('form');
+        newForm.id = 'formNewsForEnrollee';
 
         newForm.innerHTML = '<form><div class="form-group"><label for="formControlInput0">Текст блока "Заголовок новости"</label><input type="text" class="form-control" id="formControlInput0"></div>' +
             '<div class="form-group"><label for="formControlTextarea0">Текст блока "Подзаголовок новости"</label>' +
@@ -49,10 +54,11 @@ function adminStructureAndGoverningBodiesCtrl($http, $location, $scope) {
 
         document.getElementById("divUpdateGovernance").appendChild(newForm);
 
-        document.getElementById("formControlInput0").value = mas[5].EnrolleeNews[objSel.options.selectedIndex].Title;
-        document.getElementById("formControlTextarea0").value = mas[5].EnrolleeNews[objSel.options.selectedIndex].Subtitle;
-        document.getElementById("formControlTextarea1").value = mas[5].EnrolleeNews[objSel.options.selectedIndex].Text;
+        document.getElementById("formControlInput0").value = mas[5].NewsForEnrollee[objSel.options.selectedIndex].Title;
+        document.getElementById("formControlTextarea0").value = mas[5].NewsForEnrollee[objSel.options.selectedIndex].Subtitle;
+        document.getElementById("formControlTextarea1").value = mas[5].NewsForEnrollee[objSel.options.selectedIndex].Text;
 
+        status = 1;
         document.getElementById('updateDataEnrolleeNews' ).style.display = 'block';
     });
 

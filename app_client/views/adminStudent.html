@@ -26,20 +26,26 @@
         <hr class="sidebar-divider my-0">
 
         <!-- Nav Item - Dashboard -->
-        <li class="nav-item active">
+        <li class="nav-item">
             <a class="nav-link" href="/#!/admin-home">
                 <i class="fas fa-fw fa-list-alt"></i>
                 <span>Колледж (aboutCollege)</span></a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
             <a class="nav-link" href="/#!/admin-governance">
                 <i class="fas fa-fw fa-list-alt"></i>
                 <span>Руководство (governance)</span></a>
-        </li><li class="nav-item active">
-        <a class="nav-link" href="/#!/admin-structure-and-governing-bodies">
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/#!/admin-enrollee">
             <i class="fas fa-fw fa-list-alt"></i>
             <span>Абитуриенту (enrollee)</span></a>
-    </li>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="/#!/admin-student">
+                <i class="fas fa-fw fa-list-alt"></i>
+                <span>Студенту (student)</span></a>
+        </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider">
@@ -59,7 +65,7 @@
 
             <!-- Topbar -->
             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                <div class="sidebar-brand-text mx-3"><h5>Абитуриенту (enrollee)</h5></div>
+                <div class="sidebar-brand-text mx-3"><h5>Студенту (student)</h5></div>
 
                 <ul class="navbar-nav ml-auto">
                     <a href="/#!/logout" class="btn btn-secondary btn-icon-split">
@@ -87,19 +93,19 @@
                             </span>
                             <span class="text">Выбрать</span>
                         </button>
-                        <button class="btn btn btn-danger btn-icon-split" type="submit" id="delDataEnrolleeNews">
-                            <span class="icon text-white-50">
-                                <i class="fa fa-trash"></i>
-                            </span>
-                            <span class="text">Удалить</span>
-                        </button>
+<!--                        <button class="btn btn btn-danger btn-icon-split" type="submit" id="delDataEnrolleeNews">-->
+<!--                            <span class="icon text-white-50">-->
+<!--                                <i class="fa fa-trash"></i>-->
+<!--                            </span>-->
+<!--                            <span class="text">Удалить</span>-->
+<!--                        </button>-->
                     </form>
                 </div>
                 <div class="col-8" id="divUpdateGovernance">
                 </div>
                 <div class="col-4"></div>
                 <div class="col-8">
-                    <button class="btn btn btn-success btn-icon-split" style="display: none" type="submit" id="updateDataEnrolleeNews">
+                    <button class="btn btn btn-success btn-icon-split" style="display: none" type="submit" id="updateDataStudentNews">
                         <span class="icon text-white-50">
                             <i class="fa fa-check"></i>
                         </span>

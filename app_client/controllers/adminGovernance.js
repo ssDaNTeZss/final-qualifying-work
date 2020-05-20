@@ -40,7 +40,7 @@ function adminGovernanceCtrl($http, $location, $scope) {
         }
     }
 
-    $( "#updateDataAboutCollege" ).click(function() {
+    $( "#searchDataAboutCollege" ).click(function() {
         if (status == 1) {
             document.getElementById("form-governance").remove();
         }
@@ -75,7 +75,7 @@ function adminGovernanceCtrl($http, $location, $scope) {
         document.getElementById('updateDataGovernance2' ).style.display = 'block';
     });
 
-    $( "#updateDataGovernance2" ).click(function() {
+    $( "#updateDataGovernance" ).click(function() {
         let isQ = confirm("Вы уверены? Это внесет изменения...");
         if (isQ) {
             if (objSel.options.selectedIndex == 0) {

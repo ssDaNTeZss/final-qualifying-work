@@ -1,19 +1,5 @@
 function studentCtrl($http, $location, $scope) {
-    setInterval(function () {
-        date = new Date(),
-            h = date.getHours(),
-            m = date.getMinutes(),
-            h = (h < 10) ? '0' + h : h,
-            m = (m < 10) ? '0' + m : m,
-            document.getElementById('time').innerHTML = h + ':' + m;
-    }, 500);
-
-    let d = new Date();
-    let day = new Array("Воскресенье", "Понедельник", "Вторник",
-        "Среда", "Четверг", "Пятница", "Суббота");
-    let month = new Array("января", "февраля", "марта", "апреля", "мая", "июня",
-        "июля", "августа", "сентября", "октября", "ноября", "декабря");
-    document.getElementById('date').innerHTML = day[d.getDay()] + ", " + d.getDate() + " " + month[d.getMonth()];
+    clock ();
 
     $( "#undo" ).click(function() {
         window.location.href = '/#!/';
@@ -36,7 +22,7 @@ function studentCtrl($http, $location, $scope) {
 
         let masNewsForStudents = mas[6].NewsForStudents;
 
-        for (let a = 0; a < masNewsForStudents.length; a++) {
+        for (let a = masNewsForStudents.length - 1; a >= 0; a++) {
             let newDiv = document.createElement("div");
             newDiv.className = 'col-12 block-SaGB';
             let idNewsForStudents = 'NewsForStudents' + a;

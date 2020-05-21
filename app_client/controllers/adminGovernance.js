@@ -40,7 +40,7 @@ function adminGovernanceCtrl($http, $location, $scope) {
         }
     }
 
-    $( "#searchDataAboutCollege" ).click(function() {
+    $( "#searchDataGovernance" ).click(function() {
         if (status == 1) {
             document.getElementById("form-governance").remove();
         }

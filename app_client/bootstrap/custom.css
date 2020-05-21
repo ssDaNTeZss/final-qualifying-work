@@ -40,32 +40,33 @@ html, body {padding:0; margin:0;}
 }
 
 .gbp {
-    font-size: 30pt;
-    line-height: 20pt;
+    font-size: 4vw;
+    line-height:20pt;
 }
 
 .nntc{
-    font-size: 38pt;
+    font-size: 5vw;
     line-height: 25pt;
 }
 
 .time {
-    font-size: 80pt;
+    font-size: 10vw;
     line-height: 50pt;
 }
 
 .date {
-    font-size: 25pt;
+    font-size: 3.3vw;
     line-height: 50pt;
 }
 
 .time-sm {
-    font-size: 40pt;
+    font-size: 6vw;
 }
 
 .date-sm {
-    font-size: 15pt;
+    font-size: 1.8vw;
     line-height: 10pt;
+    font-weight: bold;
 }
 
 .info-row1 {
@@ -78,6 +79,7 @@ html, body {padding:0; margin:0;}
     border-radius: 20px;
     padding: 1%;
     margin-bottom: 2%;
+    opacity: 0.9;
 }
 
 .info-l {
@@ -129,7 +131,7 @@ html, body {padding:0; margin:0;}
 .td-vertical-align-middle {
     vertical-align:middle;
     border:0px solid #fff;
-    font-size: 25pt;
+    font-size: 3vw;
     margin-bottom: 0px;
     font-weight: bold;
 }
@@ -240,7 +242,7 @@ html, body {padding:0; margin:0;}
 .text-for-sq {
     margin-top: 5%;
     font-size: 3vw;
-    color: #000000;
+    color: #333;
     margin-bottom: 0px;
     font-weight: bold;
 }
@@ -303,7 +305,7 @@ hr {
 }
 
 .text-for-sq-gn {
-    color: #000000;
+    color: #333;
     margin-bottom: 2%;
     font-weight: bold;
 }
@@ -324,6 +326,7 @@ hr {
     height: auto;
     border-radius: 20px;
     margin-top: 5%;
+    margin-bottom: 2%;
     padding: 2%;
     background-color: #FFFFFF;
     opacity: 0.90;
@@ -403,7 +406,7 @@ hr {
 
 .textAboutCollege {
     margin: 0;
-    color: #000000;
+    color: #333;
 }
 
 .block-work-schedule-SE-l {
@@ -448,7 +451,7 @@ hr {
 }
 
 .text-work-schedule {
-    color: #000000;
+    color: #333;
     font-size: 2vw;
     font-weight: bold;
     margin: 5% 0 0 5%;
@@ -490,28 +493,28 @@ hr {
 }
 
 .name-governance {
-    color: #000000;
+    color: #333;
     font-size: 3vw;
     font-weight: bold;
     margin: 0;
 }
 
 .info-governance {
-    color: #000000;
+    color: #333;
     font-size: 1.8vw;
     padding: 0;
     display: flex;
     align-items: flex-end;
 }
 .info-governance-place {
-    color: #000000;
+    color: #333;
     font-size: 1.8vw;
     padding: 0;
 }
 
 
 .info-governance-pl {
-    color: #000000;
+    color: #333;
     font-size: 1.8vw;
     padding: 0;
     margin-bottom: 1%;
@@ -542,6 +545,14 @@ hr {
 .header3 {
     margin: 0;
     color: #919191;
+    font-size: 2.5vw;
+    font-weight: bold;
+    margin-top: 2%;
+}
+
+.header2-5-B {
+    margin: 0;
+    color: #333333;
     font-size: 2.5vw;
     font-weight: bold;
     margin-top: 2%;
@@ -582,4 +593,26 @@ hr {
     font-size: 1.8vw;
     font-weight: bold;
     margin: 1% 0 0 2%;
+}
+
+.text1-8vw-AC {
+    color: #333;
+    font-size: 1.8vw;
+    font-weight: bold;
+    margin: 1% 0 0 0;
+    text-indent: 3%;
+}
+
+.text1-8vw-AC-noti {
+    color: #333;
+    font-size: 1.8vw;
+    font-weight: bold;
+    margin: 1% 0 0 0;
+}
+
+.text2vw-AC{
+    color: #333;
+    font-size: 2vw;
+    font-weight: bold;
+    margin: 1% 0 0 0;
 }

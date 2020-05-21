@@ -70,6 +70,11 @@ function config($routeProvider){
             controller: 'adminOtherSettingsCtrl',
             controllerAs: 'vm'
         })
+        .when('/admin-structure-and-governing-bodies', {
+            templateUrl: 'views/adminStructureAndGoverningBodies.html',
+            controller: 'adminStructureAndGoverningBodiesCtrl',
+            controllerAs: 'vm'
+        })
         .when('/testdata-schedules', {
         templateUrl: 'testdata/schedules.json',
         controllerAs: 'vm'
@@ -93,6 +98,7 @@ angular
     .controller('adminGovernanceCtrl', adminGovernanceCtrl)
     .controller('adminEnrolleeCtrl', adminEnrolleeCtrl)
     .controller('adminStudentCtrl', adminStudentCtrl)
+    .controller('adminStructureAndGoverningBodiesCtrl', adminStructureAndGoverningBodiesCtrl)
     .controller('adminOtherSettingsCtrl', adminOtherSettingsCtrl)
     .config(['$routeProvider', config])
     ;

@@ -82,11 +82,43 @@ module.exports.update = async (req, res, next) => {
             .write();
     }
 
-    if(req.body.urlForSchedule){
+    if (req.body.timeToReturn){
+        db.set('ConnectionSetup.TimeToReturn', req.body.timeToReturn)
+            .write();
+    }
+
+    if (req.body.urlForSchedule){
         db.set('ConnectionSetup.UrlForSchedule', req.body.urlForSchedule)
             .write();
     }
 
+    if (req.body.headFirstBuilding){
+        db.set('MAS[3].StructureAndGoverningBodies.StructureOfTheEducationalOrganization.HeadFirstBuilding', req.body.headFirstBuilding)
+            .write();
+        db.set('MAS[3].StructureAndGoverningBodies.StructureOfTheEducationalOrganization.TextFirstBuilding', req.body.textFirstBuilding)
+            .write();
+        db.set('MAS[3].StructureAndGoverningBodies.StructureOfTheEducationalOrganization.HeadSecondBuilding', req.body.headSecondBuilding)
+            .write();
+        db.set('MAS[3].StructureAndGoverningBodies.StructureOfTheEducationalOrganization.TextSecondBuilding', req.body.textSecondBuilding)
+            .write();
+        db.set('MAS[3].StructureAndGoverningBodies.StructureOfTheEducationalOrganization.HeadCollegeGoverningBodies', req.body.headCollegeGoverningBodies)
+            .write();
+        db.set('MAS[3].StructureAndGoverningBodies.StructureOfTheEducationalOrganization.TextCollegeGoverningBodies', req.body.textCollegeGoverningBodies)
+            .write();
+    }
+
+    if (req.body.name){
+        db.set('MAS[3].StructureAndGoverningBodies.StructuralUnits[' + req.body.index + '].Name', req.body.name)
+            .write();
+        db.set('MAS[3].StructureAndGoverningBodies.StructuralUnits[' + req.body.index + '].Manager', req.body.manager)
+            .write();
+        db.set('MAS[3].StructureAndGoverningBodies.StructuralUnits[' + req.body.index + '].Email', req.body.email)
+            .write();
+        db.set('MAS[3].StructureAndGoverningBodies.StructuralUnits[' + req.body.index + '].Telephone', req.body.telephone)
+            .write();
+        db.set('MAS[3].StructureAndGoverningBodies.StructuralUnits[' + req.body.index + '].Location', req.body.location)
+            .write();
+    }
     h.sendJsonResponse(res, 200);
 };
 
@@ -108,8 +140,22 @@ module.exports.delete = async (req, res, next) => {
 };
 
 module.exports.create = async function (req, res) {
-    db.set('MAS[4].UploadImg[0].name', req.body.name)
-        .write();
-    db.set('MAS[4].UploadImg[0].imageSrc', req.file ? req.file.path : '')
-        .write();
+    // db.set('MAS[4].UploadImg[0].name', req.body.name)
+    //     .write();
+    // db.set('MAS[4].UploadImg[0].imageSrc', req.file ? req.file.path : '')
+    //     .write();
+
+    if(req.body.titleEnrolleeNews) {
+        db.set('MAS[5].NewsForEnrollee[' + req.body.indexMAX + '].Title', req.body.titleEnrolleeNews)
+            .write();
+        db.set('MAS[5].NewsForEnrollee[' + req.body.indexMAX + '].Subtitle', req.body.subtitleEnrolleeNews)
+            .write();
+        db.set('MAS[5].NewsForEnrollee[' + req.body.indexMAX + '].Text', req.body.textEnrolleeNews)
+            .write();
+
+        // db.set('MAS[5].NewsForEnrollee[' + req.body.indexEnrolleeNews + '].Subtitle', req.body.subtitleEnrolleeNews)
+        //     .write();
+        // db.set('MAS[5].NewsForEnrollee[' + req.body.indexEnrolleeNews + '].Text', req.body.textEnrolleeNews)
+        //     .write();
+    }
 };

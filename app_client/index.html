@@ -106,14 +106,30 @@
         }
     });
 
+    let requestURL = 'testdata/masData.json';
+
+    let request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+
+    request.onload = function() {
+        let data = request.response;
+        searchData(data);
+    };
+
+    function searchData(jsonObj) {
+        ConnectionSetup = jsonObj['ConnectionSetup'];
+
+        timeToReturn = ConnectionSetup.TimeToReturn;
+    }
 
     function monitoringInactivity () {
-    let to = 5 * 60 * 1000, ts = 0;
+    let to = timeToReturn * 60 * 1000, ts = 0;
 
 
         addEventListener('mousemove', () => {
             ts = Date.now();
-            console.log("Пользователь активен");
         });
 
         setInterval(() => {
@@ -121,6 +137,24 @@
                 window.location.href = '/#!/';
             }
         }, 1000);
+    }
+
+    function clock () {
+        setInterval(function () {
+            date = new Date(),
+                h = date.getHours(),
+                m = date.getMinutes(),
+                h = (h < 10) ? '0' + h : h,
+                m = (m < 10) ? '0' + m : m,
+                document.getElementById('time').innerHTML = h + ':' + m;
+        }, 100);
+
+        let d = new Date();
+        let day = new Array("Воскресенье", "Понедельник", "Вторник",
+            "Среда", "Четверг", "Пятница", "Суббота");
+        let month = new Array("января", "февраля", "марта", "апреля", "мая", "июня",
+            "июля", "августа", "сентября", "октября", "ноября", "декабря");
+        document.getElementById('date').innerHTML = day[d.getDay()] + ", " + d.getDate() + " " + month[d.getMonth()];
     }
 </script>
 
@@ -138,6 +172,7 @@
 <script src="controllers/adminEnrollee.js"></script>
 <script src="controllers/adminStudent.js"></script>
 <script src="controllers/adminOtherSettings.js"></script>
+<script src="controllers/adminStructureAndGoverningBodies.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

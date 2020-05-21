@@ -17,17 +17,17 @@ function adminEnrolleeCtrl($http, $location, $scope) {
     let objSelValue;
     status = 0;
 
-    let requestURL = 'testdata/masData.json';
+        let requestURL = 'testdata/masData.json';
 
-    let request = new XMLHttpRequest();
-    request.open('GET', requestURL);
-    request.responseType = 'json';
-    request.send();
+        let request = new XMLHttpRequest();
+        request.open('GET', requestURL);
+        request.responseType = 'json';
+        request.send();
 
-    request.onload = function() {
-        let data = request.response;
-        showNewsForEnrollee(data);
-    };
+        request.onload = function () {
+            let data = request.response;
+            showNewsForEnrollee(data);
+        };
 
     function showNewsForEnrollee(jsonObj) {
         mas = jsonObj['MAS'];
@@ -63,7 +63,7 @@ function adminEnrolleeCtrl($http, $location, $scope) {
     });
 
     $( "#updateDataEnrolleeNews" ).click(function() {
-        let isQ = confirm("Вы уверены? Это внесет изменения...");
+        let isQ = confirm("Вы уверены? Это действие внесёт изменения...");
         if (isQ) {
             let p1 = $http.put('/api/masData', {
                 indexEnrolleeNews: objSel.options.selectedIndex,
@@ -83,6 +83,42 @@ function adminEnrolleeCtrl($http, $location, $scope) {
         let index = objSel.options.selectedIndex;
         if (isQ) {
             let p1 = $http.delete('/api/masData/' + index, {
+                headers: {
+                    token: localStorage.getItem('token')
+                }
+            });
+        }
+    });
+
+    $( "#addDataEnrolleeNews" ).click(function() {
+        if (status == 1) {
+            document.getElementById("formNewsForEnrollee").remove();
+        }
+        let newForm = document.createElement('form');
+        newForm.id = 'formNewsForEnrollee';
+
+        newForm.innerHTML = '<form><div class="form-group"><label for="formControlInput0">Текст блока "Заголовок новости"</label><input type="text" class="form-control" id="formControlInput0"></div>' +
+            '<div class="form-group"><label for="formControlTextarea0">Текст блока "Подзаголовок новости"</label>' +
+            '<textarea class="form-control" id="formControlTextarea0" name="nameFormControlTextarea2" rows="7"></textarea></div>' +
+            '<div class="form-group"><label for="formControlTextarea1">Текст блока "Основной текст новости"</label>' +
+            '<textarea class="form-control" id="formControlTextarea1" name="nameFormControlTextarea2" rows="16"></textarea></div></form>';
+
+        document.getElementById("divUpdateGovernance").appendChild(newForm);
+
+        status = 1;
+        document.getElementById('createDataEnrolleeNews' ).style.display = 'block';
+
+    });
+
+    $( "#createDataEnrolleeNews" ).click(function() {
+        let isQ = confirm("Вы уверены? Это действие создаст запись...");
+        if (isQ) {
+            let p1 = $http.post('/api/masData', {
+                indexMAX: mas[5].NewsForEnrollee.length,
+                titleEnrolleeNews: document.getElementById("formControlInput0").value,
+                subtitleEnrolleeNews: document.getElementById("formControlTextarea0").value,
+                textEnrolleeNews: document.getElementById("formControlTextarea1").value
+            }, {
                 headers: {
                     token: localStorage.getItem('token')
                 }

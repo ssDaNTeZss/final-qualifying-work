@@ -37,6 +37,11 @@
                 <span>Руководство (governance)</span></a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="/#!/admin-structure-and-governing-bodies">
+                <i class="fas fa-fw fa-list-alt"></i>
+                <span>Структура и органы управления (structureAndGoverningBodies)</span></a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="/#!/admin-enrollee">
                 <i class="fas fa-fw fa-list-alt"></i>
                 <span>Абитуриенту (enrollee)</span></a>
@@ -86,7 +91,7 @@
 
             <!-- Begin Page Content -->
             <div class="row no-margin container-fluid">
-                <div class="col-8">
+                <div class="col-6">
                     <form>
                         <div class="form-group">
                             <label for="formControlInput0">Url для подключения файла с расписанием</label>
@@ -94,6 +99,26 @@
                         </div>
                         <button class="btn btn-success btn-icon-split"
                                 type="submit" id="updateConnectionSetup"> <span
+                                class="icon text-white-50">
+                      <i class="fa fa-check"></i>
+                    </span>
+                            <span class="text">Изменить</span>
+                        </button>
+                    </form>
+                </div>
+                <div class="col-6">
+                    <form>
+                        <div class="form-group">
+                            <label for="formControlInput1">Время перехода на начальную страницу (мин.)</label>
+                            <input ng-class="(vm.formModel.time.valid) ? '': 'is-invalid'"
+                                   ng-model="vm.formModel.time.value" ng-keyup="vm.validate()"
+                                   type="text" class="form-control" id="formControlInput1">
+                            <div ng-class="(vm.formModel.time.valid && vm.formWasValidated) ? 'valid-feedback': 'invalid-feedback'">
+                                {{vm.formModel.time.infoText}}
+                            </div>
+                        </div>
+                        <button ng-disabled="!vm.formWasValidated" class="btn btn-success btn-icon-split"
+                                type="submit" id="updateTimeUpdate"> <span
                                 class="icon text-white-50">
                       <i class="fa fa-check"></i>
                     </span>

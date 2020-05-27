@@ -35,6 +35,7 @@
 
 <div>  <!--class="container-fluid"-->
     <div ng-view></div>
+<!--Кнопка "Универсального доступа"-->
     <div class="help-button-1" id="hb1">
         <div class="row no-margin">
             <div class="help-button-2">
@@ -64,47 +65,50 @@
 <script src="bootstrap/jquery.transit.min.js"></script>
 <script src="bootstrap/jquery-3.5.1.min.js"></script>
 
-<!--<script src="bootstrap/jquery-3.4.1.slim.min.js"></script>-->
 <script src="bootstrap/popper.min.js"></script>
 <script src="bootstrap/bootstrap.min.js"></script>
 
 <script language="JavaScript">
-    let clickHB = 0;
-    let clickMode1 = 0;
+    function UniversalAccess() {
+        let clickHB = 0;
+        let clickMode1 = 0;
 
-    $( "#mode1" ).click(function() {
-        switch (clickMode1) {
-            case 0:
-                $( "#divMode1" ).animate({
-                    height: "50%",
-                }, 2000 );
-                clickMode1 = 1;
-                break;
-            case 1:
-                $( "#divMode1" ).animate({
-                    height: "0px",
-                }, 2000 );
-                clickMode1 = 0;
-                break;
-        }
-    });
+        //Режим доступа для инвалидов-колясочников
+        $("#mode1").click(function () {
+            switch (clickMode1) {
+                case 0:
+                    $("#divMode1").animate({
+                        height: "50%",
+                    }, 2000);
+                    clickMode1 = 1;
+                    break;
+                case 1:
+                    $("#divMode1").animate({
+                        height: "0px",
+                    }, 2000);
+                    clickMode1 = 0;
+                    break;
+            }
+        });
 
-    $( "#hb1" ).click(function() {
-        switch (clickHB) {
-            case 0:
-                $( "#hb1" ).animate({
-                    width: "120mm",
-                }, 500 );
-                clickHB = 1;
-                break;
-            case 1:
-                $( "#hb1" ).animate({
-                    width: "40mm",
-                }, 500 );
-                clickHB = 0;
-                break;
-        }
-    });
+        //Антмация кнопки
+        $("#hb1").click(function () {
+            switch (clickHB) {
+                case 0:
+                    $("#hb1").animate({
+                        width: "120mm",
+                    }, 500);
+                    clickHB = 1;
+                    break;
+                case 1:
+                    $("#hb1").animate({
+                        width: "40mm",
+                    }, 500);
+                    clickHB = 0;
+                    break;
+            }
+        });
+    }
 
     let requestURL = 'testdata/masData.json';
 
@@ -120,13 +124,11 @@
 
     function searchData(jsonObj) {
         ConnectionSetup = jsonObj['ConnectionSetup'];
-
         timeToReturn = ConnectionSetup.TimeToReturn;
     }
 
     function monitoringInactivity () {
-    let to = timeToReturn * 60 * 1000, ts = 0;
-
+        let to = timeToReturn * 60 * 1000, ts = 0;
 
         addEventListener('mousemove', () => {
             ts = Date.now();
@@ -160,19 +162,21 @@
 
 <script src="controllers/homePage.js"></script>
 <script src="controllers/aboutСollege.js"></script>
+<script src="controllers/governance.js"></script>
+<script src="controllers/structureAndGoverningBodies.js"></script>
+<script src="controllers/enrollee.js"></script>
+<script src="controllers/student.js"></script>
+<script src="controllers/schedule.js"></script>
+
 <script src="controllers/login.js"></script>
 <script src="controllers/logout.js"></script>
 <script src="controllers/adminHome.js"></script>
-<script src="controllers/governance.js"></script>
-<script src="controllers/enrollee.js"></script>
-<script src="controllers/student.js"></script>
-<script src="controllers/structureAndGoverningBodies.js"></script>
-<script src="controllers/schedule.js"></script>
 <script src="controllers/adminGovernance.js"></script>
 <script src="controllers/adminEnrollee.js"></script>
 <script src="controllers/adminStudent.js"></script>
 <script src="controllers/adminOtherSettings.js"></script>
 <script src="controllers/adminStructureAndGoverningBodies.js"></script>
+
 <script src="app.js"></script>
 </body>
 </html>

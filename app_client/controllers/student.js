@@ -1,17 +1,23 @@
 function studentCtrl($http, $location, $scope) {
+    monitoringInactivity ();
     clock ();
+    UniversalAccess();
 
     $( "#undo" ).click(function() {
         window.location.href = '/#!/';
     });
 
+    //URL-адрес JSON
     let requestURL = 'testdata/masData.json';
 
     let request = new XMLHttpRequest();
+    //Открываем новый запрос
     request.open('GET', requestURL);
+    //Устанавлливаем возврат в JSON
     request.responseType = 'json';
     request.send();
 
+    //Ожидание ответа на возврат с сервера, а затем обращение с данными
     request.onload = function() {
         let data = request.response;
         showNewsForStudents(data);
@@ -22,6 +28,7 @@ function studentCtrl($http, $location, $scope) {
 
         let masNewsForStudents = mas[6].NewsForStudents;
 
+        //Создание и заполениение блоков "Новости"
         for (let a = masNewsForStudents.length - 1; a >= 0; a++) {
             let newDiv = document.createElement("div");
             newDiv.className = 'col-12 block-SaGB';

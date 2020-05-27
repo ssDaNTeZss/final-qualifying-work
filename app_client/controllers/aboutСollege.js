@@ -1,5 +1,7 @@
 function aboutСollegeCtrl($http, $location, $scope) {
+    monitoringInactivity ();
     clock ();
+    UniversalAccess();
 
     $( "#undo" ).click(function() {
         window.location.href = '/#!/';
@@ -13,20 +15,17 @@ function aboutСollegeCtrl($http, $location, $scope) {
         window.location.href = '/#!/structure-and-governing-bodies';
     });
 
-    $( "#containerBgPlus" ).click(function() {
-        $( "#hb1" ).animate({
-            width: "40mm",
-        }, 500 );
-    });
-
-
+    //URL-адрес JSON
     let requestURL = 'testdata/masData.json';
 
     let request = new XMLHttpRequest();
+    //Открываем новый запрос
     request.open('GET', requestURL);
+    //Устанавлливаем возврат в JSON
     request.responseType = 'json';
     request.send();
 
+    //Ожидание ответа на возврат с сервера, а затем обращение с данными
     request.onload = function() {
         let data = request.response;
         showAboutCollege(data);
@@ -35,9 +34,11 @@ function aboutСollegeCtrl($http, $location, $scope) {
     function showAboutCollege(jsonObj) {
         let mas = jsonObj['MAS'];
 
+        //Добавление в блок "Режим и график работы" информации из masData.json
         document.getElementById("divHeaderAboutCollege").innerHTML += mas[1].DataWorkSchedule.HeaderWorkSchedule;
         document.getElementById("divTextWorkSchedule").innerHTML += mas[1].DataWorkSchedule.TextWorkSchedule;
 
+        //Добавление в блок "Основные сведения" информации из masData.json
         let newDiv = document.createElement("div");
         newDiv.className = 'row-12 headerAboutCollege';
         let idDiv = 'divHeaderAboutCollege';
@@ -53,5 +54,4 @@ function aboutСollegeCtrl($http, $location, $scope) {
         newDiv2.innerHTML = innerDiv2;
         document.getElementById("div-aboutCollege").appendChild(newDiv2);
     }
-
 }

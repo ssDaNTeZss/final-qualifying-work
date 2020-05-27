@@ -1,17 +1,23 @@
 function structureAndGoverningBodiesCtrl($http, $location, $scope) {
+    monitoringInactivity ();
     clock ();
+    UniversalAccess();
 
-    $("#undo").click(function () {
+    $( "#undo" ).click(function() {
         window.location.href = '/#!/about-college';
     });
 
+    //URL-адрес JSON
     let requestURL = 'testdata/masData.json';
 
     let request = new XMLHttpRequest();
+    //Открываем новый запрос
     request.open('GET', requestURL);
+    //Устанавлливаем возврат в JSON
     request.responseType = 'json';
     request.send();
 
+    //Ожидание ответа на возврат с сервера, а затем обращение с данными
     request.onload = function() {
         let data = request.response;
         showStructureAndGoverningBodies(data);
@@ -22,6 +28,7 @@ function structureAndGoverningBodiesCtrl($http, $location, $scope) {
         let masSaGB1 = mas[3].StructureAndGoverningBodies.StructureOfTheEducationalOrganization;
         let masSaGB2 = mas[3].StructureAndGoverningBodies.StructuralUnits;
 
+        //Создание и заполнение блока "Структура образовательной организации"
         let newDiv = document.createElement("div");
         newDiv.className = 'col-12 block-SaGB';
         newDiv.id = 'divStructureOfTheEducationalOrganization';
@@ -37,9 +44,10 @@ function structureAndGoverningBodiesCtrl($http, $location, $scope) {
 
         let newDiv1 = document.createElement("div");
         newDiv1.className = "row header2-W";
-        newDiv1.innerHTML = 'Структура образовательной организации';
+        newDiv1.innerHTML = 'Структурные подразделения';
         document.getElementById("divContent").appendChild(newDiv1);
 
+        //Создание и заполнение блоков "Структурные подразделения"
         for (let a = 0; a < masSaGB2.length; a++) {
             let newDiv2 = document.createElement("div");
             newDiv2.className = 'col-12 block-SaGB';

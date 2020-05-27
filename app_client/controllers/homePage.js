@@ -1,20 +1,21 @@
 function homePageCtrl($http, $location, $scope) {
     monitoringInactivity ();
     clock ();
+    UniversalAccess();
 
-    document.getElementById("schedule").onclick = function () {
+    $( "#schedule" ).click(function() {
         window.location.href = '/#!/schedule';
-    };
+    });
 
-    document.getElementById("aboutCollege").onclick = function () {
+    $( "#aboutCollege" ).click(function() {
         window.location.href = '/#!/about-college';
-    };
+    });
 
-    document.getElementById("enrollee").onclick = function () {
+    $( "#enrollee" ).click(function() {
         window.location.href = '/#!/enrollee';
-    };
+    });
 
-    document.getElementById("student").onclick = function () {
+    $( "#student" ).click(function() {
         window.location.href = '/#!/student';
-    };
+    });
 }

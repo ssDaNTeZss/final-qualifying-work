@@ -33,7 +33,6 @@ function loginCtrl($http, $location, $scope) {
     };
 
     vm.sendForm = function () {
-
         vm.error = '';
 
         console.log('waiting...');

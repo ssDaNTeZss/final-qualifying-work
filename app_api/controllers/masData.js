@@ -2,7 +2,7 @@ let mongoose = require('mongoose');
 let token = mongoose.model('token');
 const h = require('../helpers/common');
 
-
+//Small JSON database for Node, Electron and the browser. Powered by Lodash
 const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
 
@@ -128,23 +128,13 @@ module.exports.delete = async (req, res, next) => {
         return;
     }
 
-    // db.get('MAS[5].EnrolleeNews[1]')
-    //     .remove('Subtitle')
-    //     .write();
-
     if (req.params.index) {
         db.unset('MAS[5].NewsForEnrollee[' + req.params.index + ']')
             .write();
-
     }
 };
 
 module.exports.create = async function (req, res) {
-    // db.set('MAS[4].UploadImg[0].name', req.body.name)
-    //     .write();
-    // db.set('MAS[4].UploadImg[0].imageSrc', req.file ? req.file.path : '')
-    //     .write();
-
     if(req.body.titleEnrolleeNews) {
         db.set('MAS[5].NewsForEnrollee[' + req.body.indexMAX + '].Title', req.body.titleEnrolleeNews)
             .write();
@@ -152,10 +142,5 @@ module.exports.create = async function (req, res) {
             .write();
         db.set('MAS[5].NewsForEnrollee[' + req.body.indexMAX + '].Text', req.body.textEnrolleeNews)
             .write();
-
-        // db.set('MAS[5].NewsForEnrollee[' + req.body.indexEnrolleeNews + '].Subtitle', req.body.subtitleEnrolleeNews)
-        //     .write();
-        // db.set('MAS[5].NewsForEnrollee[' + req.body.indexEnrolleeNews + '].Text', req.body.textEnrolleeNews)
-        //     .write();
     }
 };

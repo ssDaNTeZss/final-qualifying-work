@@ -4,7 +4,6 @@ let token = mongoose.model('token');
 const crypto = require('crypto');
 const h = require('../helpers/common');
 
-
 module.exports.signup = (req, res) => {
 
     if (!req.body.login) {
@@ -45,9 +44,7 @@ module.exports.signup = (req, res) => {
 
             h.sendJsonResponse(res, 201, {success: 'created'});
         });
-
     });
-
 };
 
 module.exports.login = (req, res) => {

@@ -26,10 +26,10 @@ function adminGovernanceCtrl($http, $location, $scope) {
 
     request.onload = function() {
         let data = request.response;
-        showgGovernance(data);
+        showGovernance(data);
     };
 
-    function showgGovernance(jsonObj) {
+    function showGovernance(jsonObj) {
         mas = jsonObj['MAS'];
 
         objSel.options[0] = new Option(mas[2].Governance[0].Director.FullName, "str0");
@@ -50,7 +50,15 @@ function adminGovernanceCtrl($http, $location, $scope) {
 
         if (objSel.options.selectedIndex == 0) {
             let director = mas[2].Governance[0].Director;
-            newForm.innerHTML = '<form><div class="form-group"><label for="formControlInput0">Текст блока "Должность"</label><input type="text" class="form-control" id="formControlInput0"></div><div class="form-group"><label for="formControlInput1">Текст блока "ФИО"</label><input type="text" class="form-control" id="formControlInput1"></div><div class="form-group"><label for="formControlInputAdditionally">Текст блока "Дополнительно"</label><input type="text" class="form-control" id="formControlInputAdditionally"></div><div class="form-group"><label for="formControlInput2">Текст блока "Телефон"</label><input type="text" class="form-control" id="formControlInput2"></div><div class="form-group"><label for="formControlInput3">Текст блока "Email"</label><input type="text" class="form-control" id="formControlInput3"><div class="form-group"><label for="formControlInput4">Текст блока "Место нахождения"</label><input type="text" class="form-control" id="formControlInput4"></div></div></form>';
+            newForm.innerHTML = '<form><div class="form-group"><label for="formControlInput0">Текст блока "Должность"</label>' +
+                '<input type="text" class="form-control" id="formControlInput0"></div><div class="form-group">' +
+                '<label for="formControlInput1">Текст блока "ФИО"</label><input type="text" class="form-control" id="formControlInput1"></div>' +
+                '<div class="form-group"><label for="formControlInputAdditionally">Текст блока "Дополнительно"</label>' +
+                '<input type="text" class="form-control" id="formControlInputAdditionally"></div><div class="form-group">' +
+                '<label for="formControlInput2">Текст блока "Телефон"</label><input type="text" class="form-control" id="formControlInput2"></div>' +
+                '<div class="form-group"><label for="formControlInput3">Текст блока "Email"</label><input type="text" class="form-control" id="formControlInput3">' +
+                '<div class="form-group"><label for="formControlInput4">Текст блока "Место нахождения"</label>' +
+                '<input type="text" class="form-control" id="formControlInput4"></div></div></form>';
 
             document.getElementById("divUpdateGovernance").appendChild(newForm);
 
@@ -61,7 +69,14 @@ function adminGovernanceCtrl($http, $location, $scope) {
             document.getElementById("formControlInput3").value = director.Email;
             document.getElementById("formControlInput4").value = director.Location;
         } else {
-            newForm.innerHTML = '<form><div class="form-group"><label for="formControlInput0">Текст блока "Должность"</label><input type="text" class="form-control" id="formControlInput0"></div><div class="form-group"><label for="formControlInput1">Текст блока "ФИО"</label><input type="text" class="form-control" id="formControlInput1"></div><div class="form-group"><label for="formControlInput2">Текст блока "Телефон"</label><input type="text" class="form-control" id="formControlInput2"></div><div class="form-group"><label for="formControlInput3">Текст блока "Email"</label><input type="text" class="form-control" id="formControlInput3"></div><div class="form-group"><label for="formControlInput4">Текст блока "Место нахождения"</label><input type="text" class="form-control" id="formControlInput4"></div></form>';
+            newForm.innerHTML = '<form><div class="form-group"><label for="formControlInput0">Текст блока "Должность"</label>' +
+                '<input type="text" class="form-control" id="formControlInput0"></div><div class="form-group">' +
+                '<label for="formControlInput1">Текст блока "ФИО"</label><input type="text" class="form-control" id="formControlInput1"></div>' +
+                '<div class="form-group"><label for="formControlInput2">Текст блока "Телефон"</label>' +
+                '<input type="text" class="form-control" id="formControlInput2"></div><div class="form-group">' +
+                '<label for="formControlInput3">Текст блока "Email"</label><input type="text" class="form-control" id="formControlInput3"></div>' +
+                '<div class="form-group"><label for="formControlInput4">Текст блока "Место нахождения"</label>' +
+                '<input type="text" class="form-control" id="formControlInput4"></div></form>';
 
             document.getElementById("divUpdateGovernance").appendChild(newForm);
 
@@ -72,7 +87,7 @@ function adminGovernanceCtrl($http, $location, $scope) {
             document.getElementById("formControlInput4").value = mas[2].Governance[objSel.options.selectedIndex].Location;
         }
         status = 1;
-        document.getElementById('updateDataGovernance2' ).style.display = 'block';
+        document.getElementById('updateDataGovernance' ).style.display = 'block';
     });
 
     $( "#updateDataGovernance" ).click(function() {

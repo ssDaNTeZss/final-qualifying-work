@@ -34,8 +34,6 @@ function adminHomeCtrl($http, $location, $scope) {
         document.getElementById("formControlTextarea2").value = mas[1].DataWorkSchedule.TextWorkSchedule;
     }
 
-// console.log(document.getElementById("formControlInput1").value);
-
     $( "#updateDataAboutCollege" ).click(function() {
         let isQ = confirm("Вы уверены? Это внесет изменения...");
         if (isQ) {
@@ -64,5 +62,4 @@ function adminHomeCtrl($http, $location, $scope) {
             });
         }
     });
-
 }

@@ -3,6 +3,26 @@ function enrolleeCtrl($http, $location, $scope) {
     clock ();
     UniversalAccess();
 
+    setInterval (function () {
+        switch (modeForTheVisuallyImpaired) {
+            case 'on':
+                $("div.main").addClass('main-black');
+                $("div.main").removeClass('main');
+                $("b.time-sm").addClass('time-sm-mftvi');
+                $("b.time-sm").removeClass('time-sm');
+                $("p.date-sm").addClass('date-sm-mftvi');
+                $("p.date-sm").removeClass('date-sm-sm');
+                $("div.container-bg-plus").addClass('container-bg-plus-mftvi');
+                $("div.container-bg-plus").removeClass('container-bg');
+
+                $("div.undo").addClass('undo-mftvi');
+                $("div.undo").removeClass('undo');
+                break;
+        }
+
+
+    }, 100);
+
     $( "#undo" ).click(function() {
         window.location.href = '/#!/';
     });

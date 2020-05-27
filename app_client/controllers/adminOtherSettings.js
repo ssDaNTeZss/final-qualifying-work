@@ -72,7 +72,7 @@ function adminOtherSettingsCtrl($http, $location, $scope) {
     };
 
     $( "#updateTimeUpdate" ).click(function() {
-        console.log('updateTimeUpdate');
+        //console.log('updateTimeUpdate');
         let isQ = confirm("Вы уверены? Это внесет изменения...");
         if (isQ) {
             let p1 = $http.put('/api/masData', {
@@ -84,4 +84,12 @@ function adminOtherSettingsCtrl($http, $location, $scope) {
             });
         }
     });
+
+    $( "#test" ).click(function() {
+        console.log('123');
+
+        $("span.btn").addClass('invisible');
+    });
+
+
 }

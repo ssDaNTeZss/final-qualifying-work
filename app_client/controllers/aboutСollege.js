@@ -3,6 +3,54 @@ function aboutСollegeCtrl($http, $location, $scope) {
     clock ();
     UniversalAccess();
 
+    setInterval (function () {
+        switch (modeForTheVisuallyImpaired) {
+            case 'on':
+                $("div.main").addClass('main-black');
+                $("div.main").removeClass('main');
+                $("b.time-sm").addClass('time-sm-mftvi');
+                $("b.time-sm").removeClass('time-sm');
+                $("p.date-sm").addClass('date-sm-mftvi');
+                $("p.date-sm").removeClass('date-sm-sm');
+                $("div.container-bg-plus").addClass('container-bg-plus-mftvi');
+                $("div.container-bg-plus").removeClass('container-bg');
+
+                $("div.undo").addClass('undo-mftvi');
+                $("div.undo").removeClass('undo');
+
+                $("div.block-work-schedule-SE-l").addClass('block-work-schedule-SE-l-mftvi');
+                $("div.block-work-schedule-SE-l").removeClass('block-work-schedule-SE-l');
+                $("div.header-work-schedule").addClass('header-work-schedule-mftvi');
+                $("div.header-work-schedule").removeClass('header-work-schedule');
+                $("div.block-work-schedule-r").addClass('block-work-schedule-r-mftvi');
+                $("div.block-work-schedule-r").removeClass('block-work-schedule-r');
+                $("div.block-work-schedule-r-down").addClass('block-work-schedule-r-down-mftvi');
+                $("div.block-work-schedule-r-down").removeClass('block-work-schedule-r-down');
+
+                $("div.div-aboutCollege").addClass('div-aboutCollege-mftvi');
+                $("div.div-aboutCollege").removeClass('div-aboutCollege');
+
+                $("div.headerAboutCollege").addClass('headerAboutCollege-mftvi');
+                $("div.headerAboutCollege").removeClass('headerAboutCollege');
+                $("div.text-work-schedule").addClass('text-work-schedule-mftvi');
+                $("div.text-work-schedule").removeClass('text-work-schedule');
+                $("p.header2-5-B").addClass('header3-5-B-mftvi');
+                $("p.header2-5-B").removeClass('header2-5-B');
+
+                $("div.text1-8vw-AC-noti").addClass('text-2vw-AC-noti-mftvi');
+                $("div.text1-8vw-AC-noti").removeClass('text1-8vw-AC-noti');
+                $("div.text2vw-AC").addClass('text2-8vw-AC');
+                $("div.text2vw-AC").removeClass('text2vw-AC');
+                $("div.text1-8vw-AC").addClass('text2vw-AC-mftvi');
+                $("div.text1-8vw-AC").removeClass('text1-8vw-AC');
+
+
+                break;
+        }
+
+
+    }, 100);
+
     $( "#undo" ).click(function() {
         window.location.href = '/#!/';
     });

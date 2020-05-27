@@ -52,7 +52,7 @@
                     </div>
                 </div>
             </div>
-            <div class="help-button-2">
+            <div class="help-button-2" id="mode2">
                 <div class="help-button-3">
                     <div class="help-button-4">
                         <img src="/img/invalid.png">
@@ -69,9 +69,16 @@
 <script src="bootstrap/bootstrap.min.js"></script>
 
 <script language="JavaScript">
+    modeForTheVisuallyImpaired = 'off';
     function UniversalAccess() {
         let clickHB = 0;
         let clickMode1 = 0;
+
+        $("#mode2").click(function () {
+            // $("div.main").addClass('main-black');
+            // $("div.main").removeClass('main');
+            modeForTheVisuallyImpaired = 'on';
+        });
 
         //Режим доступа для инвалидов-колясочников
         $("#mode1").click(function () {
@@ -176,7 +183,6 @@
 <script src="controllers/adminStudent.js"></script>
 <script src="controllers/adminOtherSettings.js"></script>
 <script src="controllers/adminStructureAndGoverningBodies.js"></script>
-
 <script src="app.js"></script>
 </body>
 </html>

@@ -19,8 +19,6 @@ function enrolleeCtrl($http, $location, $scope) {
                 $("div.undo").removeClass('undo');
                 break;
         }
-
-
     }, 100);
 
     $( "#undo" ).click(function() {

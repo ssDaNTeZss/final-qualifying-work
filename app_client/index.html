@@ -36,6 +36,7 @@
 <div>  <!--class="container-fluid"-->
     <div ng-view></div>
 <!--Кнопка "Универсального доступа"-->
+<!--   class="help-button-1"-->
     <div class="help-button-1" id="hb1">
         <div class="row no-margin">
             <div class="help-button-2">
@@ -70,14 +71,39 @@
 
 <script language="JavaScript">
     modeForTheVisuallyImpaired = 'off';
+
+    let vm = this;
+    vm.mode='mode2';
+    console.log(vm.mode);
+
+    vm.switchMode=(mode)=>{
+        vm.mode = mode;
+    };
+
     function UniversalAccess() {
         let clickHB = 0;
         let clickMode1 = 0;
+        let clickMode2 = 0;
 
         $("#mode2").click(function () {
-            // $("div.main").addClass('main-black');
-            // $("div.main").removeClass('main');
-            modeForTheVisuallyImpaired = 'on';
+            // switch (clickMode2) {
+            //     case 0:
+            //         modeForTheVisuallyImpaired = 'on';
+            //         clickMode2 = 1;
+            //
+            //         $("div.help-button-1").addClass('help-button-1-mftvi');
+            //         $("div.help-button-1").removeClass('help-button-1');
+            //         break;
+            //     case 1:
+            //         modeForTheVisuallyImpaired = 'off';
+            //         clickMode2 = 0;
+            //
+            //         $("div.help-button-1-mftvi").addClass('help-button-1');
+            //         $("div.help-button-1-mftvi").removeClass('help-button-1-mftvi');
+            //         break;
+            // }
+            vm.switchMode('mode1');
+            console.log(vm.mode);
         });
 
         //Режим доступа для инвалидов-колясочников
@@ -103,7 +129,7 @@
             switch (clickHB) {
                 case 0:
                     $("#hb1").animate({
-                        width: "120mm",
+                        width: "121.5mm",
                     }, 500);
                     clickHB = 1;
                     break;

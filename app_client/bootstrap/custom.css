@@ -205,6 +205,18 @@ html, body {padding:0; margin:0;}
 }
 
 .help-button-1 {
+     position: fixed;
+     right: 0;
+     bottom: 0;
+     margin: 20px;
+     width: 40mm;
+     height: 40mm;
+     border-radius: 7.8mm;
+     opacity: 0.8;
+     background-color: #FFF;
+ }
+
+.help-button-1-mftvi {
     position: fixed;
     right: 0;
     bottom: 0;
@@ -212,8 +224,9 @@ html, body {padding:0; margin:0;}
     width: 40mm;
     height: 40mm;
     border-radius: 7.8mm;
-    opacity: 0.8;
     background-color: #FFF;
+    opacity: 0.8;
+    border: 3px solid #000000;
 }
 
 .help-button-x {

@@ -15,6 +15,17 @@ function homePageCtrl($http, $location, $scope) {
                 $("td.td-vertical-align-middle").addClass('td-vertical-align-middle-mftvi');
                 $("td.td-vertical-align-middle").removeClass('td-vertical-align-middle');
                 break;
+
+            case 'off':
+                $("div.main-black").addClass('main');
+                $("div.main-black").removeClass('main-black');
+                $("div.container-bg-mftvi").addClass('container-bg');
+                $("div.container-bg-mftvi").removeClass('container-bg-mftvi');
+                $("div.info-mftvi").addClass('info');
+                $("div.info-mftvi").removeClass('info-mftvi');
+                $("td.td-vertical-align-middle-mftvi").addClass('td-vertical-align-middle');
+                $("td.td-vertical-align-middle-mftvi").removeClass('td-vertical-align-middle-mftvi');
+                break;
         }
     }, 100);
 

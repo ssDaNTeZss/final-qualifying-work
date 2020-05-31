@@ -8,8 +8,8 @@ function homePageCtrl($http, $location, $scope) {
             case 'on':
                 $("div.main").addClass('main-black');
                 $("div.main").removeClass('main');
-                $("div.container-bg").addClass('container-bg-mftvi');
-                $("div.container-bg").removeClass('container-bg');
+                $("div.container-bg-plus").addClass('container-bg-plus-mftvi');
+                $("div.container-bg-plus").removeClass('container-bg-plus');
                 $("div.info").addClass('info-mftvi');
                 $("div.info").removeClass('info');
                 $("td.td-vertical-align-middle").addClass('td-vertical-align-middle-mftvi');
@@ -19,8 +19,8 @@ function homePageCtrl($http, $location, $scope) {
             case 'off':
                 $("div.main-black").addClass('main');
                 $("div.main-black").removeClass('main-black');
-                $("div.container-bg-mftvi").addClass('container-bg');
-                $("div.container-bg-mftvi").removeClass('container-bg-mftvi');
+                $("div.container-bg-plus-mftvi").addClass('container-bg-plus');
+                $("div.container-bg-plus-mftvi").removeClass('container-bg-plus-mftvi');
                 $("div.info-mftvi").addClass('info');
                 $("div.info-mftvi").removeClass('info-mftvi');
                 $("td.td-vertical-align-middle-mftvi").addClass('td-vertical-align-middle');

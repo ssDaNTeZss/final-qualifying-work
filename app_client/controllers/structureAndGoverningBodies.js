@@ -3,6 +3,43 @@ function structureAndGoverningBodiesCtrl($http, $location, $scope) {
     clock ();
     UniversalAccess();
 
+    setInterval (function () {
+        switch (modeForTheVisuallyImpaired) {
+            case 'on':
+                $("div.main").addClass('main-black');
+                $("div.main").removeClass('main');
+                $("b.time-sm").addClass('time-sm-mftvi');
+                $("b.time-sm").removeClass('time-sm');
+                $("p.date-sm").addClass('date-sm-mftvi');
+                $("p.date-sm").removeClass('date-sm');
+                $("div.container-bg-plus").addClass('container-bg-plus-mftvi');
+                $("div.container-bg-plus").removeClass('container-bg-plus');
+
+                $("div.undo").addClass('undo-mftvi');
+                $("div.undo").removeClass('undo');
+
+                $("hr.hr").addClass('hr-mftvi');
+                $("hr.hr").removeClass('hr');
+
+                $("div.header1").addClass('header1-mftvi');
+                $("div.header1").removeClass('header1');
+                $("div.block-SaGB").addClass('block-SaGB-mftvi');
+                $("div.block-SaGB").removeClass('block-SaGB');
+                $("div.header2-W").addClass('header2-W-mftvi');
+                $("div.header2-W").removeClass('header2-W');
+                $("div.header2").addClass('header2-mftvi');
+                $("div.header2").removeClass('header2');
+                $("div.header3").addClass('header3-mftvi');
+                $("div.header3").removeClass('header3');
+                $("div.text2vw").addClass('text2-5vw-mftvi');
+                $("div.text2vw").removeClass('text2vw');
+                $("div.header3-no-margin").addClass('header3-no-margin-mftvi');
+                $("div.header3-no-margin").removeClass('header3-no-margin');
+
+                break;
+        }
+    }, 100);
+
     $( "#undo" ).click(function() {
         window.location.href = '/#!/about-college';
     });
@@ -40,6 +77,7 @@ function structureAndGoverningBodiesCtrl($http, $location, $scope) {
         document.getElementById("divContent").appendChild(newDiv);
 
         let newHr = document.createElement("hr");
+        newHr.className = 'hr';
         document.getElementById("divContent").appendChild(newHr);
 
         let newDiv1 = document.createElement("div");

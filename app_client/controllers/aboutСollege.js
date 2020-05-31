@@ -11,9 +11,9 @@ function aboutСollegeCtrl($http, $location, $scope) {
                 $("b.time-sm").addClass('time-sm-mftvi');
                 $("b.time-sm").removeClass('time-sm');
                 $("p.date-sm").addClass('date-sm-mftvi');
-                $("p.date-sm").removeClass('date-sm-sm');
+                $("p.date-sm").removeClass('date-sm');
                 $("div.container-bg-plus").addClass('container-bg-plus-mftvi');
-                $("div.container-bg-plus").removeClass('container-bg');
+                $("div.container-bg-plus").removeClass('container-bg-plus');
 
                 $("div.undo").addClass('undo-mftvi');
                 $("div.undo").removeClass('undo');
@@ -43,12 +43,48 @@ function aboutСollegeCtrl($http, $location, $scope) {
                 $("div.text2vw-AC").removeClass('text2vw-AC');
                 $("div.text1-8vw-AC").addClass('text2vw-AC-mftvi');
                 $("div.text1-8vw-AC").removeClass('text1-8vw-AC');
+                break;
 
+            case 'off':
+                $("div.main-black").addClass('main');
+                $("div.main-black").removeClass('main-black');
+                $("div.container-bg-plus-mftvi").addClass('container-bg-plus');
+                $("div.container-bg-plus-mftvi").removeClass('container-bg-plus-mftvi');
+                $("b.time-sm-mftvi").addClass('time-sm');
+                $("b.time-sm-mftvi").removeClass('time-sm-mftvi');
+                $("p.date-sm-mftvi").addClass('date-sm');
+                $("p.date-sm-mftvi").removeClass('date-sm');
 
+                $("div.undo-mftvi").addClass('undo');
+                $("div.undo-mftvi").removeClass('undo-mftvi');
+
+                $("div.block-work-schedule-SE-l-mftvi").addClass('block-work-schedule-SE-l');
+                $("div.block-work-schedule-SE-l-mftvi").removeClass('block-work-schedule-SE-l-mftvi');
+                $("div.header-work-schedule-mftvi").addClass('header-work-schedule');
+                $("div.header-work-schedule-mftvi").removeClass('header-work-schedule');
+                $("div.block-work-schedule-r-mftvi").addClass('block-work-schedule-r');
+                $("div.block-work-schedule-r-mftvi").removeClass('block-work-schedule-r-mftvi');
+                $("div.block-work-schedule-r-down-mftvi").addClass('block-work-schedule-r-down');
+                $("div.block-work-schedule-r-down-mftvi").removeClass('block-work-schedule-r-down-mftvi');
+
+                $("div.div-aboutCollege-mftvi").addClass('div-aboutCollege');
+                $("div.div-aboutCollege-mftvi").removeClass('div-aboutCollege-mftvi');
+
+                $("div.headerAboutCollege-mftvi").addClass('headerAboutCollege');
+                $("div.headerAboutCollege-mftvi").removeClass('headerAboutCollege-mftvi');
+                $("div.text-work-schedule-mftvi").addClass('text-work-schedule');
+                $("div.text-work-schedule-mftvi").removeClass('text-work-schedule-mftvi');
+                $("p.header3-5-B-mftvi").addClass('header2-5-B');
+                $("p.header3-5-B-mftvi").removeClass('header3-5-B-mftvi');
+
+                $("div.text-2vw-AC-noti-mftvi").addClass('text1-8vw-AC-noti');
+                $("div.text-2vw-AC-noti-mftvi").removeClass('text-2vw-AC-noti-mftvi');
+                $("div.text2-8vw-AC").addClass('text2vw-AC');
+                $("div.text2-8vw-AC").removeClass('text2-8vw-AC');
+                $("div.text2vw-AC-mftvi").addClass('text1-8vw-AC');
+                $("div.text2vw-AC-mftvi").removeClass('text2vw-AC-mftvi');
                 break;
         }
-
-
     }, 100);
 
     $( "#undo" ).click(function() {

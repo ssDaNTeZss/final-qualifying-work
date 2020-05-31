@@ -8,13 +8,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Title</title>
+    <title>Киоск</title>
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
 
 
     <link rel="stylesheet" href="bootstrap/custom.css">
-
-    <title>Hello, world!</title>
 
     <script src="angular.min.js"></script>
     <script src="angular-route.min.js"></script>
@@ -22,41 +20,33 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
           rel="stylesheet">
 
-    <script type="text/javascript" src="nicEdit/nicEdit.js"></script>
-    <script type="text/javascript">
-        bkLib.onDomLoaded(function() {
-            new nicEditor({
-                iconsPath: 'nicEdit/nicEditorIcons.gif'
-            }).panelInstance('formControlTextarea1');
-        });
-    </script>
 </head>
 <body>
 
-<div>  <!--class="container-fluid"-->
+<div>  <!--ОСНОВНОЙ БЛОК-->
     <div ng-view></div>
+
 <!--Кнопка "Универсального доступа"-->
-<!--   class="help-button-1"-->
     <div class="help-button-1" id="hb1">
         <div class="row no-margin">
-            <div class="help-button-2">
+            <div class="help-button-2" id="mode0">
                 <div class="help-button-3">
                     <div class="help-button-4">
-                        <img src="/img/invalid.png">
+                        <img src="/img/normal.svg">
                     </div>
                 </div>
             </div>
             <div class="help-button-2" id="mode1">
                 <div class="help-button-3">
                     <div class="help-button-4">
-                        <img src="/img/invalid.png">
+                        <img src="/img/invalid.svg">
                     </div>
                 </div>
             </div>
             <div class="help-button-2" id="mode2">
                 <div class="help-button-3">
                     <div class="help-button-4">
-                        <img src="/img/invalid.png">
+                        <img src="/img/VisuallyImpaired.svg">
                     </div>
                 </div>
             </div>
@@ -72,38 +62,28 @@
 <script language="JavaScript">
     modeForTheVisuallyImpaired = 'off';
 
-    let vm = this;
-    vm.mode='mode2';
-    console.log(vm.mode);
-
-    vm.switchMode=(mode)=>{
-        vm.mode = mode;
-    };
-
     function UniversalAccess() {
         let clickHB = 0;
         let clickMode1 = 0;
         let clickMode2 = 0;
 
         $("#mode2").click(function () {
-            // switch (clickMode2) {
-            //     case 0:
-            //         modeForTheVisuallyImpaired = 'on';
-            //         clickMode2 = 1;
-            //
-            //         $("div.help-button-1").addClass('help-button-1-mftvi');
-            //         $("div.help-button-1").removeClass('help-button-1');
-            //         break;
-            //     case 1:
-            //         modeForTheVisuallyImpaired = 'off';
-            //         clickMode2 = 0;
-            //
-            //         $("div.help-button-1-mftvi").addClass('help-button-1');
-            //         $("div.help-button-1-mftvi").removeClass('help-button-1-mftvi');
-            //         break;
-            // }
-            vm.switchMode('mode1');
-            console.log(vm.mode);
+            switch (clickMode2) {
+                case 0:
+                    modeForTheVisuallyImpaired = 'on';
+                    clickMode2 = 1;
+
+                    $("div.help-button-1").addClass('help-button-1-mftvi');
+                    $("div.help-button-1").removeClass('help-button-1');
+                    break;
+                case 1:
+                    modeForTheVisuallyImpaired = 'off';
+                    clickMode2 = 0;
+
+                    $("div.help-button-1-mftvi").addClass('help-button-1');
+                    $("div.help-button-1-mftvi").removeClass('help-button-1-mftvi');
+                    break;
+            }
         });
 
         //Режим доступа для инвалидов-колясочников
@@ -111,7 +91,7 @@
             switch (clickMode1) {
                 case 0:
                     $("#divMode1").animate({
-                        height: "50%",
+                        height: "53%",
                     }, 2000);
                     clickMode1 = 1;
                     break;
@@ -129,7 +109,7 @@
             switch (clickHB) {
                 case 0:
                     $("#hb1").animate({
-                        width: "121.5mm",
+                        width: "122mm",
                     }, 500);
                     clickHB = 1;
                     break;
@@ -139,6 +119,20 @@
                     }, 500);
                     clickHB = 0;
                     break;
+            }
+        });
+
+        //Режим доступа для инвалидов-колясочников
+        $("#mode0").click(function () {
+            if (clickHB === 1) {
+                modeForTheVisuallyImpaired = 'off';
+                $("div.help-button-1-mftvi").addClass('help-button-1');
+                $("div.help-button-1-mftvi").removeClass('help-button-1-mftvi');
+                clickMode2 = 0;
+                $("#divMode1").animate({
+                    height: "0px",
+                }, 2000);
+                clickMode1 = 0;
             }
         });
     }
@@ -162,6 +156,7 @@
 
     function monitoringInactivity () {
         let to = timeToReturn * 60 * 1000, ts = 0;
+        ts = Date.now();
 
         addEventListener('mousemove', () => {
             ts = Date.now();

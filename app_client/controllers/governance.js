@@ -3,6 +3,45 @@ function governanceCtrl($http, $location, $scope) {
     clock ();
     UniversalAccess();
 
+    setInterval (function () {
+        switch (modeForTheVisuallyImpaired) {
+            case 'on':
+                $("div.main").addClass('main-black');
+                $("div.main").removeClass('main');
+                $("b.time-sm").addClass('time-sm-mftvi');
+                $("b.time-sm").removeClass('time-sm');
+                $("p.date-sm").addClass('date-sm-mftvi');
+                $("p.date-sm").removeClass('date-sm');
+                $("div.container-bg-plus").addClass('container-bg-plus-mftvi');
+                $("div.container-bg-plus").removeClass('container-bg-plus');
+
+                $("div.undo").addClass('undo-mftvi');
+                $("div.undo").removeClass('undo');
+
+                $("div.div-header").addClass('div-header-mftvi');
+                $("div.div-header").removeClass('div-header');
+                $("hr.hr").addClass('hr-mftvi');
+                $("hr.hr").removeClass('hr');
+
+                $("div.div-header-2").addClass('div-header-2-mftvi');
+                $("div.div-header-2").removeClass('div-header-2');
+                $("div.block-governance").addClass('block-governance-mftvi');
+                $("div.block-governance").removeClass('block-governance');
+                $("div.header-for-governance").addClass('header-for-governance-mftvi');
+                $("div.header-for-governance").removeClass('header-for-governance');
+
+                $("div.name-governance").addClass('name-governance-mftvi');
+                $("div.name-governance").removeClass('name-governance');
+                $("div.info-governance-pl").addClass('info-governance-pl-mftvi');
+                $("div.info-governance-pl").removeClass('info-governance-pl');
+                $("div.info-governance-place").addClass('info-governance-place-mftvi');
+                $("div.info-governance-place").removeClass('info-governance-place');
+                $("div.info-governance").addClass('info-governance-mftvi');
+                $("div.info-governance").removeClass('info-governance');
+                break;
+        }
+    }, 100);
+
     $( "#undo" ).click(function() {
         window.location.href = '/#!/about-college';
     });

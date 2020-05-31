@@ -3,6 +3,43 @@ function scheduleCtrl($http, $location, $scope) {
     clock ();
     UniversalAccess();
 
+    setInterval (function () {
+        switch (modeForTheVisuallyImpaired) {
+            case 'on':
+                $("div.main").addClass('main-black');
+                $("div.main").removeClass('main');
+                $("b.time-sm").addClass('time-sm-mftvi');
+                $("b.time-sm").removeClass('time-sm');
+                $("p.date-sm").addClass('date-sm-mftvi');
+                $("p.date-sm").removeClass('date-sm');
+                $("div.container-bg-plus").addClass('container-bg-plus-mftvi');
+                $("div.container-bg-plus").removeClass('container-bg-plus');
+
+                $("div.undo").addClass('undo-mftvi');
+                $("div.undo").removeClass('undo');
+
+                $("hr.hr").addClass('hr-mftvi');
+                $("hr.hr").removeClass('hr');
+
+                $("div.schedule-for-the-day").addClass('schedule-for-the-day-mftvi');
+                $("div.schedule-for-the-day").removeClass('schedule-for-the-day');
+                $("div.course-number").addClass('course-number-mftvi');
+                $("div.course-number").removeClass('course-number');
+
+                $("div.sq-content").addClass('sq-content-mftvi');
+                $("div.sq-content").removeClass('sq-content');
+                $("div.sq-wrapper").addClass('sq-wrapper-mftvi');
+                $("div.sq-wrapper").removeClass('sq-wrapper');
+                $("div.text-for-sq-gr").addClass('text-for-sq-gr-mftvi');
+                $("div.text-for-sq-gr").removeClass('text-for-sq-gr');
+                $("div.text-for-sq").addClass('text-for-sq-mftvi');
+                $("div.text-for-sq").removeClass('text-for-sq');
+
+
+                break;
+        }
+    }, 100);
+
     $( "#undo" ).click(function() {
         window.location.href = '/#!/';
     });
@@ -46,7 +83,7 @@ function scheduleCtrl($http, $location, $scope) {
             //Создание блока с датой расписания
             let newDiv = document.createElement("div");
             let innerDiv = "<div class=\"row no-margin\"><div class=\"col-12 schedule-for-the-day no-margin no-padding\" id=\"" +
-                id_row_date + "\">Расписание на </div><hr></div></div>" + "<div class=\"row no-margin\" id=\"" + id_row_schedule + "\">";
+                id_row_date + "\">Расписание на </div><hr class='hr'></div></div>" + "<div class=\"row no-margin\" id=\"" + id_row_schedule + "\">";
             newDiv.innerHTML = innerDiv;
             document.getElementById("div-schedule").appendChild(newDiv);
 
@@ -71,19 +108,19 @@ function scheduleCtrl($http, $location, $scope) {
                 //Создания блока курса
                 switch (nCourse) {
                     case '1':
-                        innerDiv1 = '<div class="row no-margin course-number-1">1 Курс</div>';
+                        innerDiv1 = '<div class="row no-margin course-number">1 Курс</div>';
                         newDiv1.innerHTML = innerDiv1;
                         break;
                     case '2':
-                        innerDiv1 = '<div class="row no-margin course-number-1">2 Курс</div>';
+                        innerDiv1 = '<div class="row no-margin course-number">2 Курс</div>';
                         newDiv1.innerHTML = innerDiv1;
                         break;
                     case '3':
-                        innerDiv1 = '<div class="row no-margin course-number-1">3 Курс</div>';
+                        innerDiv1 = '<div class="row no-margin course-number">3 Курс</div>';
                         newDiv1.innerHTML = innerDiv1;
                         break;
                     case '4':
-                        innerDiv1 = '<div class="row no-margin course-number-1">4 Курс</div>';
+                        innerDiv1 = '<div class="row no-margin course-number">4 Курс</div>';
                         newDiv1.innerHTML = innerDiv1;
                         break;
                 }

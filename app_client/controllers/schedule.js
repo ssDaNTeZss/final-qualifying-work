@@ -5,6 +5,7 @@ function scheduleCtrl($http, $location, $scope) {
 
     setInterval (function () {
         switch (modeForTheVisuallyImpaired) {
+            //Вкл. «режим для слабовидящих»
             case 'on':
                 $("div.main").addClass('main-black');
                 $("div.main").removeClass('main');
@@ -35,7 +36,58 @@ function scheduleCtrl($http, $location, $scope) {
                 $("div.text-for-sq").addClass('text-for-sq-mftvi');
                 $("div.text-for-sq").removeClass('text-for-sq');
 
+                $("div.cardd").addClass('cardd-mftvi');
+                $("div.cardd").removeClass('cardd');
 
+                $("div.text-for-sq-g").addClass('text-for-sq-g-mftvi');
+                $("div.text-for-sq-g").removeClass('text-for-sq-g');
+                $("div.text-for-sq-gn").addClass('text-for-sq-gn-mftvi');
+                $("div.text-for-sq-gn").removeClass('text-for-sq-gn');
+
+                $("table.table-bordered").addClass('table-striped');
+
+
+                break;
+            //Выкл. «режим для слабовидящих»
+            case 'off':
+                $("div.main-black").addClass('main');
+                $("div.main-black").removeClass('main-black');
+                $("div.container-bg-plus-mftvi").addClass('container-bg-plus');
+                $("div.container-bg-plus-mftvi").removeClass('container-bg-plus-mftvi');
+                $("b.time-sm-mftvi").addClass('time-sm');
+                $("b.time-sm-mftvi").removeClass('time-sm-mftvi');
+                $("p.date-sm-mftvi").addClass('date-sm');
+                $("p.date-sm-mftvi").removeClass('date-sm');
+
+                $("div.undo-mftvi").addClass('undo');
+                $("div.undo-mftvi").removeClass('undo-mftvi');
+
+                $("hr.hr-mftvi").addClass('hr');
+                $("hr.hr-mftvi").removeClass('hr-mftvi');
+
+                $("div.schedule-for-the-day-mftvi").addClass('schedule-for-the-day');
+                $("div.schedule-for-the-day-mftvi").removeClass('schedule-for-the-day-mftvi');
+                $("div.course-number-mftvi").addClass('course-number');
+                $("div.course-number-mftvi").removeClass('course-number-mftvi');
+
+                $("div.sq-content-mftvi").addClass('sq-content');
+                $("div.sq-content-mftvi").removeClass('sq-content-mftvi');
+                $("div.sq-wrapper-mftvi").addClass('sq-wrapper');
+                $("div.sq-wrapper-mftvi").removeClass('sq-wrapper-mftvi');
+                $("div.text-for-sq-gr-mftvi").addClass('text-for-sq-gr');
+                $("div.text-for-sq-gr-mftvi").removeClass('text-for-sq-gr-mftvi');
+                $("div.text-for-sq-mftvi").addClass('text-for-sq');
+                $("div.text-for-sq-mftvi").removeClass('text-for-sq-mftvi');
+
+                $("div.cardd-mftvi").addClass('cardd');
+                $("div.cardd-mftvi").removeClass('cardd-mftvi');
+
+                $("div.text-for-sq-g-mftvi").addClass('text-for-sq-g');
+                $("div.text-for-sq-g-mftvi").removeClass('text-for-sq-g-mftvi');
+                $("div.text-for-sq-gn-mftvi").addClass('text-for-sq-gn');
+                $("div.text-for-sq-gn-mftvi").removeClass('text-for-sq-gn-mftvi');
+
+                $("table.table-striped").removeClass('table-striped');
                 break;
         }
     }, 100);

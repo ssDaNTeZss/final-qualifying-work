@@ -5,6 +5,7 @@ function aboutСollegeCtrl($http, $location, $scope) {
 
     setInterval (function () {
         switch (modeForTheVisuallyImpaired) {
+            //Вкл. «режим для слабовидящих»
             case 'on':
                 $("div.main").addClass('main-black');
                 $("div.main").removeClass('main');
@@ -44,7 +45,7 @@ function aboutСollegeCtrl($http, $location, $scope) {
                 $("div.text1-8vw-AC").addClass('text2vw-AC-mftvi');
                 $("div.text1-8vw-AC").removeClass('text1-8vw-AC');
                 break;
-
+            //Выкл. «режим для слабовидящих»
             case 'off':
                 $("div.main-black").addClass('main');
                 $("div.main-black").removeClass('main-black');

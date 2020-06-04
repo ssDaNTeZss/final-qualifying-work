@@ -35,7 +35,38 @@ function structureAndGoverningBodiesCtrl($http, $location, $scope) {
                 $("div.text2vw").removeClass('text2vw');
                 $("div.header3-no-margin").addClass('header3-no-margin-mftvi');
                 $("div.header3-no-margin").removeClass('header3-no-margin');
+                break;
+            //Выкл. «режим для слабовидящих»
+            case 'off':
+                $("div.main-black").addClass('main');
+                $("div.main-black").removeClass('main-black');
+                $("div.container-bg-plus-mftvi").addClass('container-bg-plus');
+                $("div.container-bg-plus-mftvi").removeClass('container-bg-plus-mftvi');
+                $("b.time-sm-mftvi").addClass('time-sm');
+                $("b.time-sm-mftvi").removeClass('time-sm-mftvi');
+                $("p.date-sm-mftvi").addClass('date-sm');
+                $("p.date-sm-mftvi").removeClass('date-sm');
 
+                $("div.undo-mftvi").addClass('undo');
+                $("div.undo-mftvi").removeClass('undo-mftvi');
+
+                $("hr.hr-mftvi").addClass('hr');
+                $("hr.hr-mftvi").removeClass('hr-mftvi');
+
+                $("div.header1-mftvi").addClass('header1');
+                $("div.header1-mftvi").removeClass('header1-mftvi');
+                $("div.block-SaGB-mftvi").addClass('block-SaGB');
+                $("div.block-SaGB-mftvi").removeClass('block-SaGB-mftvi');
+                $("div.header2-W-mftvi").addClass('header2-W');
+                $("div.header2-W-mftvi").removeClass('header2-W-mftvi');
+                $("div.header2-mftvi").addClass('header2');
+                $("div.header2-mftvi").removeClass('header2-mftvi');
+                $("div.header3-mftvi").addClass('header3');
+                $("div.header3-mftvi").removeClass('header3-mftvi');
+                $("div.text2-5vw-mftvi").addClass('text2vw');
+                $("div.text2-5vw-mftvi").removeClass('text2-5vw-mftvi');
+                $("div.header3-no-margin-mftvi").addClass('header3-no-margin');
+                $("div.header3-no-margin-mftvi").removeClass('header3-no-margin-mftvi');
                 break;
         }
     }, 100);
@@ -87,15 +118,17 @@ function structureAndGoverningBodiesCtrl($http, $location, $scope) {
 
         //Создание и заполнение блоков "Структурные подразделения"
         for (let a = 0; a < masSaGB2.length; a++) {
-            let newDiv2 = document.createElement("div");
-            newDiv2.className = 'col-12 block-SaGB';
+            if (masSaGB2[a].TheStatusOfVisibility === true) {
+                let newDiv2 = document.createElement("div");
+                newDiv2.className = 'col-12 block-SaGB';
 
-            newDiv2.innerHTML = '<div class="row header3-no-margin">' + masSaGB2[a].Name + '</div><div class="row text2vw">' + masSaGB2[a].Manager + '</div>' +
-                '<div class="row text2vw"><b>Электронная почта:&nbsp;</b>' + masSaGB2[a].Email + '</div>' +
-                '<div class="row text2vw"><b>Телефоны:&nbsp;</b>' + masSaGB2[a].Telephone + '</div>' +
-                '<div class="row text2vw"><b>Место нахождения:&nbsp;</b>' + masSaGB2[a].Location + '</div>';
+                newDiv2.innerHTML = '<div class="row header3-no-margin">' + masSaGB2[a].Name + '</div><div class="row text2vw">' + masSaGB2[a].Manager + '</div>' +
+                    '<div class="row text2vw"><b>Электронная почта:&nbsp;</b>' + masSaGB2[a].Email + '</div>' +
+                    '<div class="row text2vw"><b>Телефоны:&nbsp;</b>' + masSaGB2[a].Telephone + '</div>' +
+                    '<div class="row text2vw"><b>Место нахождения:&nbsp;</b>' + masSaGB2[a].Location + '</div>';
 
-            document.getElementById("divContent").appendChild(newDiv2);
+                document.getElementById("divContent").appendChild(newDiv2);
+            }
         }
     }
 }

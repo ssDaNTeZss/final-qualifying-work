@@ -5,6 +5,7 @@ function homePageCtrl($http, $location, $scope) {
 
     setInterval (function () {
         switch (modeForTheVisuallyImpaired) {
+            //Вкл. «режим для слабовидящих»
             case 'on':
                 $("div.main").addClass('main-black');
                 $("div.main").removeClass('main');
@@ -15,7 +16,7 @@ function homePageCtrl($http, $location, $scope) {
                 $("td.td-vertical-align-middle").addClass('td-vertical-align-middle-mftvi');
                 $("td.td-vertical-align-middle").removeClass('td-vertical-align-middle');
                 break;
-
+            //Выкл. «режим для слабовидящих»
             case 'off':
                 $("div.main-black").addClass('main');
                 $("div.main-black").removeClass('main-black');

@@ -29,28 +29,56 @@
           "FullName": "Раевская Елена Борисовна",
           "Telephone": "8 (831) 433-97-90",
           "Email": "reb@nntc.nnov.ru",
-          "Location": "Первый учебно-административный корпус.<br />Кабинет № 226"
+          "Location": "Первый учебно-административный корпус.<br />Кабинет № 226",
+          "TheStatusOfVisibility": true
         },
         {
           "Position": "Заместитель директора по учебно-производственной работе",
           "FullName": "Минеева Елена Петровна",
           "Telephone": "8 (831) 466-33-88",
           "Email": "nrtk-2@yandex.ru<br />mail2@nntc.nnov.ru",
-          "Location": "Второй учебный корпус. Кабинет № 24"
+          "Location": "Второй учебный корпус. Кабинет № 24",
+          "TheStatusOfVisibility": true
         },
         {
           "Position": "Заместитель директора по учебно-воспитательной работе",
           "FullName": "Соломина Анна Ивановна",
           "Telephone": "8 (831) 433-95-30",
           "Email": "uvr@nntc.nnov.ru",
-          "Location": "Первый учебно-административный корпус.<br />Кабинет № 305"
+          "Location": "Первый учебно-административный корпус.<br />Кабинет № 305",
+          "TheStatusOfVisibility": true
         },
         {
           "Position": "Заместитель директора по безопасности и хозяйственной работе",
           "FullName": "Чеберова Елена Юрьевна",
           "Telephone": "8 (831) 433-24-01",
           "Email": "e.cheberowa-nrtk@yandex.ru",
-          "Location": "Первый учебно-административный корпус.<br />Кабинет № 103"
+          "Location": "Первый учебно-административный корпус.<br />Кабинет № 103",
+          "TheStatusOfVisibility": true
+        },
+        {
+          "Position": "Пустая запись № 1",
+          "FullName": "Пустая запись № 1",
+          "Telephone": "Пустая запись № 1",
+          "Email": "Пустая запись № 1",
+          "Location": "Пустая запись № 1",
+          "TheStatusOfVisibility": false
+        },
+        {
+          "Position": "Пустая запись № 2",
+          "FullName": "Пустая запись № 2",
+          "Telephone": "Пустая запись № 2",
+          "Email": "Пустая запись № 2",
+          "Location": "Пустая запись № 2",
+          "TheStatusOfVisibility": false
+        },
+        {
+          "Position": "Пустая запись № 3",
+          "FullName": "Пустая запись № 3",
+          "Telephone": "Пустая запись № 3",
+          "Email": "Пустая запись № 3",
+          "Location": "Пустая запись № 3",
+          "TheStatusOfVisibility": false
         }
       ]
     },
@@ -70,21 +98,48 @@
             "Manager": "<b>Заведующий библиотекой:</b>&nbspКарезина Наталья Матвеевна",
             "Email": "",
             "Telephone": "8 (831) 466-34-42",
-            "Location": "Первый учебно-административный корпус, 1 этаж; второй учебный корпус, 1 этаж"
+            "Location": "Первый учебно-административный корпус, 1 этаж; второй учебный корпус, 1 этаж",
+            "TheStatusOfVisibility": true
           },
           {
             "Name": "Бухгалтерия",
             "Manager": "<b>Главный бухгалтер:</b>&nbspКрылова Елена Михайловна",
             "Email": "profl21@yandex.ru",
             "Telephone": "8 (831) 433-47-18",
-            "Location": "Первый учебно-административный корпус, кабинет №215, 216"
+            "Location": "Первый учебно-административный корпус, кабинет №215, 216",
+            "TheStatusOfVisibility": true
           },
           {
             "Name": "Вычислительный центр ",
             "Manager": "<b>Начальник вычислительного центра:</b>&nbspСлугин Владимир Георгиевич",
             "Email": "v.slugin@nntc.nnov.ru",
             "Telephone": "8 (831) 433-46-89",
-            "Location": "Первый учебно-административный корпус, кабинет №154"
+            "Location": "Первый учебно-административный корпус, кабинет №154",
+            "TheStatusOfVisibility": true
+          },
+          {
+            "Name": "Пустая запись № 1",
+            "Manager": "Пустая запись № 1",
+            "Email": "Пустая запись № 1",
+            "Telephone": "Пустая запись № 1",
+            "Location": "Пустая запись № 1",
+            "TheStatusOfVisibility": false
+          },
+          {
+            "Name": "Пустая запись № 2",
+            "Manager": "Пустая запись № 2",
+            "Email": "Пустая запись № 2",
+            "Telephone": "Пустая запись № 2",
+            "Location": "Пустая запись № 2",
+            "TheStatusOfVisibility": false
+          },
+          {
+            "Name": "Пустая запись № 3",
+            "Manager": "Пустая запись № 3",
+            "Email": "Пустая запись № 3",
+            "Telephone": "Пустая запись № 3",
+            "Location": "Пустая запись № 3",
+            "TheStatusOfVisibility": false
           }
         ]
       }
@@ -118,6 +173,8 @@
   ],
   "ConnectionSetup": {
     "UrlForSchedule": "testdata/schedules.json",
-    "TimeToReturn": "10"
+    "TimeToReturn": "10",
+    "UrlForNewsEnrollee": "testdata/newsForEnrollee.json",
+    "UrlForNewsStudent": "testdata/newsForStudent.json"
   }
 }

@@ -5,6 +5,7 @@ function enrolleeCtrl($http, $location, $scope) {
 
     setInterval (function () {
         switch (modeForTheVisuallyImpaired) {
+            //Вкл. «режим для слабовидящих»
             case 'on':
                 $("div.main").addClass('main-black');
                 $("div.main").removeClass('main');
@@ -35,7 +36,7 @@ function enrolleeCtrl($http, $location, $scope) {
                 $("thead.thead-light").addClass('thead-dark');
                 $("thead.thead-light").removeClass('thead-light');
                 break;
-
+            //Выкл. «режим для слабовидящих»
             case 'off':
                 $("div.main-black").addClass('main');
                 $("div.main-black").removeClass('main-black');
@@ -65,7 +66,6 @@ function enrolleeCtrl($http, $location, $scope) {
                 $("table.text2-5vw-mftvi").removeClass('text2-5vw-mftvi');
                 $("thead.thead-dark").addClass('thead-light');
                 $("thead.thead-dark").removeClass('thead-dark');
-
                 break;
         }
     }, 100);
@@ -74,26 +74,55 @@ function enrolleeCtrl($http, $location, $scope) {
         window.location.href = '/#!/';
     });
 
+    // //URL-адрес JSON
+    // let requestURL = 'testdata/masData.json';
+    //
+    // let request = new XMLHttpRequest();
+    // //Открываем новый запрос
+    // request.open('GET', requestURL);
+    // //Устанавлливаем возврат в JSON
+    // request.responseType = 'json';
+    // request.send();
+    //
+    // //Ожидание ответа на возврат с сервера, а затем обращение с данными
+    // request.onload = function() {
+    //     let data = request.response;
+    //     showEnrolleeNews(data);
+    // };
+
     //URL-адрес JSON
-    let requestURL = 'testdata/masData.json';
+    let requestURLDATA = 'testdata/masData.json';
 
-    let request = new XMLHttpRequest();
+    let requestDATA = new XMLHttpRequest();
     //Открываем новый запрос
-    request.open('GET', requestURL);
+    requestDATA.open('GET', requestURLDATA);
     //Устанавлливаем возврат в JSON
-    request.responseType = 'json';
-    request.send();
+    requestDATA.responseType = 'json';
+    requestDATA.send();
 
-    //Ожидание ответа на возврат с сервера, а затем обращение с данными
-    request.onload = function() {
-        let data = request.response;
-        showEnrolleeNews(data);
+    requestDATA.onload = function() {
+        urlForNewsEnrollee = requestDATA.response;
+
+        //URL-адрес расписания
+        let requestURL = urlForNewsEnrollee.ConnectionSetup.UrlForNewsEnrollee;
+
+        let request = new XMLHttpRequest();
+        //Открываем новый запрос
+        request.open('GET', requestURL);
+        //Устанавлливаем возврат в JSON
+        request.responseType = 'json';
+        request.send();
+
+        request.onload = function() {
+            let data = request.response;
+            showEnrolleeNews(data);
+        };
     };
 
     function showEnrolleeNews(jsonObj) {
-        let mas = jsonObj['MAS'];
+       // let mas = jsonObj['MAS'];
 
-        let masEnrolleeNews = mas[5].NewsForEnrollee;
+        let masEnrolleeNews = jsonObj['NewsForEnrollee'];
 
         //Создание и заполениение блоков "Новости"
         for (let a = masEnrolleeNews.length - 1; a >= 0; a--) {

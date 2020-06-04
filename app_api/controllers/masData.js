@@ -37,7 +37,7 @@ module.exports.update = async (req, res, next) => {
     }
 
     if(req.body.positionGovernance){
-        if (req.body.indexGovernance == 0) {
+        if (req.body.indexGovernance === 0) {
             db.set('MAS[2].Governance[' + req.body.indexGovernance + '].Director.Position', req.body.positionGovernance)
                 .write();
             db.set('MAS[2].Governance[' + req.body.indexGovernance + '].Director.FullName', req.body.fullNameGovernance)
@@ -60,6 +60,8 @@ module.exports.update = async (req, res, next) => {
             db.set('MAS[2].Governance[' + req.body.indexGovernance + '].Email', req.body.emailGovernance)
                 .write();
             db.set('MAS[2].Governance[' + req.body.indexGovernance + '].Location', req.body.locationGovernance)
+                .write();
+            db.set('MAS[2].Governance[' + req.body.indexGovernance + '].TheStatusOfVisibility', req.body.checkboxStatus)
                 .write();
         }
     }
@@ -92,6 +94,16 @@ module.exports.update = async (req, res, next) => {
             .write();
     }
 
+    if (req.body.urlForNewsEnrollee){
+        db.set('ConnectionSetup.UrlForNewsEnrollee', req.body.urlForNewsEnrollee)
+            .write();
+    }
+
+    if (req.body.urlForNewsStudent){
+        db.set('ConnectionSetup.UrlForNewsStudent', req.body.urlForNewsStudent)
+            .write();
+    }
+
     if (req.body.headFirstBuilding){
         db.set('MAS[3].StructureAndGoverningBodies.StructureOfTheEducationalOrganization.HeadFirstBuilding', req.body.headFirstBuilding)
             .write();
@@ -117,6 +129,8 @@ module.exports.update = async (req, res, next) => {
         db.set('MAS[3].StructureAndGoverningBodies.StructuralUnits[' + req.body.index + '].Telephone', req.body.telephone)
             .write();
         db.set('MAS[3].StructureAndGoverningBodies.StructuralUnits[' + req.body.index + '].Location', req.body.location)
+            .write();
+        db.set('MAS[3].StructureAndGoverningBodies.StructuralUnits[' + req.body.index + '].TheStatusOfVisibility', req.body.checkboxStatus)
             .write();
     }
     h.sendJsonResponse(res, 200);

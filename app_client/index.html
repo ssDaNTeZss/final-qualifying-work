@@ -67,19 +67,18 @@
         let clickMode1 = 0;
         let clickMode2 = 0;
 
+        //Режим для слабовидящих
         $("#mode2").click(function () {
             switch (clickMode2) {
                 case 0:
                     modeForTheVisuallyImpaired = 'on';
                     clickMode2 = 1;
-
                     $("div.help-button-1").addClass('help-button-1-mftvi');
                     $("div.help-button-1").removeClass('help-button-1');
                     break;
                 case 1:
                     modeForTheVisuallyImpaired = 'off';
                     clickMode2 = 0;
-
                     $("div.help-button-1-mftvi").addClass('help-button-1');
                     $("div.help-button-1-mftvi").removeClass('help-button-1-mftvi');
                     break;
@@ -122,13 +121,15 @@
             }
         });
 
-        //Режим доступа для инвалидов-колясочников
+        //Стандартный режим
         $("#mode0").click(function () {
             if (clickHB === 1) {
+                //Отключение режима для слабовидящих
                 modeForTheVisuallyImpaired = 'off';
                 $("div.help-button-1-mftvi").addClass('help-button-1');
                 $("div.help-button-1-mftvi").removeClass('help-button-1-mftvi');
                 clickMode2 = 0;
+                //Отключение режима доступа для инвалидов-колясочников
                 $("#divMode1").animate({
                     height: "0px",
                 }, 2000);
@@ -200,8 +201,8 @@
 <script src="controllers/logout.js"></script>
 <script src="controllers/adminHome.js"></script>
 <script src="controllers/adminGovernance.js"></script>
-<script src="controllers/adminEnrollee.js"></script>
-<script src="controllers/adminStudent.js"></script>
+<!--<script src="controllers/adminEnrollee.js"></script>-->
+<!--<script src="controllers/adminStudent.js"></script>-->
 <script src="controllers/adminOtherSettings.js"></script>
 <script src="controllers/adminStructureAndGoverningBodies.js"></script>
 <script src="app.js"></script>

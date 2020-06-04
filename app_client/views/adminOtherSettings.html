@@ -28,32 +28,22 @@
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
             <a class="nav-link" href="/#!/admin-home">
-                <i class="fas fa-fw fa-list-alt"></i>
+                <i class="fa fa-fw fa-home"></i>
                 <span>Колледж (aboutCollege)</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/#!/admin-governance">
-                <i class="fas fa-fw fa-list-alt"></i>
+                <i class="fa fa-fw fa-users"></i>
                 <span>Руководство (governance)</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/#!/admin-structure-and-governing-bodies">
-                <i class="fas fa-fw fa-list-alt"></i>
+                <i class="fa fa-fw fa-university"></i>
                 <span>Структура и органы управления (structureAndGoverningBodies)</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/#!/admin-enrollee">
-                <i class="fas fa-fw fa-list-alt"></i>
-                <span>Абитуриенту (enrollee)</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/#!/admin-student">
-                <i class="fas fa-fw fa-list-alt"></i>
-                <span>Студенту (student)</span></a>
         </li>
         <li class="nav-item active">
             <a class="nav-link" href="/#!/admin-other-settings">
-                <i class="fas fa-fw fa-list-alt"></i>
+                <i class="fa fa-fw fa-cogs"></i>
                 <span>Прочие настройки</span></a>
         </li>
 
@@ -100,7 +90,7 @@
                         <button class="btn btn-success btn-icon-split"
                                 type="submit" id="updateConnectionSetup"> <span
                                 class="icon text-white-50">
-                      <i class="fa fa-check"></i>
+                      <i class="fa fa-download"></i>
                     </span>
                             <span class="text">Изменить</span>
                         </button>
@@ -120,21 +110,54 @@
                         <button ng-disabled="!vm.formWasValidated" class="btn btn-success btn-icon-split"
                                 type="submit" id="updateTimeUpdate"> <span
                                 class="icon text-white-50">
-                      <i class="fa fa-check"></i>
+                      <i class="fa fa-download"></i>
                     </span>
                             <span class="text">Изменить</span>
                         </button>
                     </form>
                 </div>
-            <div class="col-6">
-                <div>
-                    <h1>Hello <span class="btn btn-success btn-icon-split">Angular</span> 9</h1>
-                    <p>
-                        Angular 9 представляет модульную архитектуру приложения
-                    </p>
-                </div>
-                <button id="test">Toggle</button>
+<!--            <div class="col-6">-->
+<!--                <div>-->
+<!--                    <h1>Hello <span class="btn btn-success btn-icon-split">Angular</span> 9</h1>-->
+<!--                    <p>-->
+<!--                        Angular 9 представляет модульную архитектуру приложения-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--                <button id="test">Toggle</button>-->
+<!--            </div>-->
             </div>
+        <br><br>
+            <div class="row no-margin container-fluid">
+                <div class="col-6">
+                    <form>
+                        <div class="form-group">
+                            <label for="formControlInput2">Url для подключения файла с новостями для абитуриентов</label>
+                            <input type="text" class="form-control" id="formControlInput2">
+                        </div>
+                        <button class="btn btn-success btn-icon-split"
+                                type="submit" id="updateConnectionSetup2"> <span
+                                class="icon text-white-50">
+                      <i class="fa fa-download"></i>
+                    </span>
+                            <span class="text">Изменить</span>
+                        </button>
+                    </form>
+                </div>
+                <div class="col-6">
+                    <form>
+                        <div class="form-group">
+                            <label for="formControlInput3">Url для подключения файла с новостями для студентов</label>
+                            <input type="text" class="form-control" id="formControlInput3">
+                        </div>
+                        <button class="btn btn-success btn-icon-split"
+                                type="submit" id="updateConnectionSetup3"> <span
+                                class="icon text-white-50">
+                      <i class="fa fa-download"></i>
+                    </span>
+                            <span class="text">Изменить</span>
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

@@ -5,6 +5,7 @@ function governanceCtrl($http, $location, $scope) {
 
     setInterval (function () {
         switch (modeForTheVisuallyImpaired) {
+            //Вкл. «режим для слабовидящих»
             case 'on':
                 $("div.main").addClass('main-black');
                 $("div.main").removeClass('main');
@@ -38,6 +39,42 @@ function governanceCtrl($http, $location, $scope) {
                 $("div.info-governance-place").removeClass('info-governance-place');
                 $("div.info-governance").addClass('info-governance-mftvi');
                 $("div.info-governance").removeClass('info-governance');
+                break;
+
+            //Выкл. «режим для слабовидящих»
+            case 'off':
+                $("div.main-black").addClass('main');
+                $("div.main-black").removeClass('main-black');
+                $("div.container-bg-plus-mftvi").addClass('container-bg-plus');
+                $("div.container-bg-plus-mftvi").removeClass('container-bg-plus-mftvi');
+                $("b.time-sm-mftvi").addClass('time-sm');
+                $("b.time-sm-mftvi").removeClass('time-sm-mftvi');
+                $("p.date-sm-mftvi").addClass('date-sm');
+                $("p.date-sm-mftvi").removeClass('date-sm');
+
+                $("div.undo-mftvi").addClass('undo');
+                $("div.undo-mftvi").removeClass('undo-mftvi');
+
+                $("div.div-header-mftvi").addClass('div-header');
+                $("div.div-header-mftvi").removeClass('div-header-mftvi');
+                $("hr.hr-mftvi").addClass('hr');
+                $("hr.hr-mftvi").removeClass('hr-mftvi');
+
+                $("div.div-header-2-mftvi").addClass('div-header-2');
+                $("div.div-header-2-mftvi").removeClass('div-header-2-mftvi');
+                $("div.block-governance-mftvi").addClass('block-governance');
+                $("div.block-governance-mftvi").removeClass('block-governance-mftvi');
+                $("div.header-for-governance-mftvi").addClass('header-for-governance');
+                $("div.header-for-governance-mftvi").removeClass('header-for-governance-mftvi');
+
+                $("div.name-governance-mftvi").addClass('name-governance');
+                $("div.name-governance-mftvi").removeClass('name-governance-mftvi');
+                $("div.info-governance-pl-mftvi").addClass('info-governance-pl');
+                $("div.info-governance-pl-mftvi").removeClass('info-governance-pl-mftvi');
+                $("div.info-governance-place-mftvi").addClass('info-governance-place');
+                $("div.info-governance-place-mftvi").removeClass('info-governance-place-mftvi');
+                $("div.info-governance-mftvi").addClass('info-governance');
+                $("div.info-governance-mftvi").removeClass('info-governance-mftvi');
                 break;
         }
     }, 100);
@@ -76,17 +113,19 @@ function governanceCtrl($http, $location, $scope) {
 
         //Заполнение последующих блоков информацией из masData.json
         for (let a = 1; a < mas[2].Governance.length; a++) {
-            let newDiv = document.createElement('div');
-            newDiv.className = 'block-governance';
-            newDiv.id = 'block-governance' + a;
-            let innerDiv = '<div class="header-for-governance">' + mas[2].Governance[a].Position +
-                '</div><div class="name-governance">' + mas[2].Governance[a].FullName +
-                '</div><div class="row no-margin"><div class="col-3 info-governance">' +
-                mas[2].Governance[a].Telephone + '</div> <div class="col-3 info-governance">' +
-                mas[2].Governance[a].Email + '</div> <div class="col-6 info-governance-place">' +
-                '<b>Место нахождения</b><br />' + mas[2].Governance[a].Location + '</div> </div>';
-            newDiv.innerHTML = innerDiv;
-            document.getElementById("content").appendChild(newDiv);
+            if (mas[2].Governance[a].TheStatusOfVisibility === true) {
+                let newDiv = document.createElement('div');
+                newDiv.className = 'block-governance';
+                newDiv.id = 'block-governance' + a;
+                let innerDiv = '<div class="header-for-governance">' + mas[2].Governance[a].Position +
+                    '</div><div class="name-governance">' + mas[2].Governance[a].FullName +
+                    '</div><div class="row no-margin"><div class="col-3 info-governance">' +
+                    mas[2].Governance[a].Telephone + '</div> <div class="col-3 info-governance">' +
+                    mas[2].Governance[a].Email + '</div> <div class="col-6 info-governance-place">' +
+                    '<b>Место нахождения</b><br />' + mas[2].Governance[a].Location + '</div> </div>';
+                newDiv.innerHTML = innerDiv;
+                document.getElementById("content").appendChild(newDiv);
+            }
         }
     }
 }

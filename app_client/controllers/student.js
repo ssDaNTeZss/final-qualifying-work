@@ -5,6 +5,7 @@ function studentCtrl($http, $location, $scope) {
 
     setInterval (function () {
         switch (modeForTheVisuallyImpaired) {
+            //Вкл. «режим для слабовидящих»
             case 'on':
                 $("div.main").addClass('main-black');
                 $("div.main").removeClass('main');
@@ -31,7 +32,7 @@ function studentCtrl($http, $location, $scope) {
                 $("div.text1-8vw").addClass('text2-5vw-mftvi');
                 $("div.text1-8vw").removeClass('text1-8vw');
                 break;
-
+            //Выкл. «режим для слабовидящих»
             case 'off':
                 $("div.main-black").addClass('main');
                 $("div.main-black").removeClass('main-black');
@@ -65,29 +66,56 @@ function studentCtrl($http, $location, $scope) {
         window.location.href = '/#!/';
     });
 
+    // //URL-адрес JSON
+    // let requestURL = 'testdata/masData.json';
+    //
+    // let request = new XMLHttpRequest();
+    // //Открываем новый запрос
+    // request.open('GET', requestURL);
+    // //Устанавлливаем возврат в JSON
+    // request.responseType = 'json';
+    // request.send();
+    //
+    // //Ожидание ответа на возврат с сервера, а затем обращение с данными
+    // request.onload = function() {
+    //     let data = request.response;
+    //     showNewsForStudents(data);
+    // };
+
     //URL-адрес JSON
-    let requestURL = 'testdata/masData.json';
+    let requestURLDATA = 'testdata/masData.json';
 
-    let request = new XMLHttpRequest();
+    let requestDATA = new XMLHttpRequest();
     //Открываем новый запрос
-    request.open('GET', requestURL);
+    requestDATA.open('GET', requestURLDATA);
     //Устанавлливаем возврат в JSON
-    request.responseType = 'json';
-    request.send();
+    requestDATA.responseType = 'json';
+    requestDATA.send();
 
-    //Ожидание ответа на возврат с сервера, а затем обращение с данными
-    request.onload = function() {
-        let data = request.response;
-        showNewsForStudents(data);
+    requestDATA.onload = function() {
+        urlForNewsStudent = requestDATA.response;
+
+        //URL-адрес расписания
+        let requestURL = urlForNewsStudent.ConnectionSetup.UrlForNewsStudent;
+
+        let request = new XMLHttpRequest();
+        //Открываем новый запрос
+        request.open('GET', requestURL);
+        //Устанавлливаем возврат в JSON
+        request.responseType = 'json';
+        request.send();
+
+        request.onload = function() {
+            let data = request.response;
+            showNewsForStudents(data);
+        };
     };
 
     function showNewsForStudents(jsonObj) {
-        let mas = jsonObj['MAS'];
-
-        let masNewsForStudents = mas[6].NewsForStudents;
+        let masNewsForStudents = jsonObj['NewsForStudents'];
 
         //Создание и заполениение блоков "Новости"
-        for (let a = masNewsForStudents.length - 1; a >= 0; a++) {
+        for (let a = masNewsForStudents.length - 1; a >= 0; a--) {
             let newDiv = document.createElement("div");
             newDiv.className = 'col-12 block-SaGB';
             let idNewsForStudents = 'NewsForStudents' + a;

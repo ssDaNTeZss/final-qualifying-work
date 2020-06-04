@@ -55,16 +55,16 @@ function config($routeProvider){
             controller: 'adminGovernanceCtrl',
             controllerAs: 'vm'
         })
-        .when('/admin-enrollee', {
-            templateUrl: 'views/adminEnrollee.html',
-            controller: 'adminEnrolleeCtrl',
-            controllerAs: 'vm'
-        })
-        .when('/admin-student', {
-            templateUrl: 'views/adminStudent.html',
-            controller: 'adminStudentCtrl',
-            controllerAs: 'vm'
-        })
+        // .when('/admin-enrollee', {
+        //     templateUrl: 'views/adminEnrollee.html',
+        //     controller: 'adminEnrolleeCtrl',
+        //     controllerAs: 'vm'
+        // })
+        // .when('/admin-student', {
+        //     templateUrl: 'views/adminStudent.html',
+        //     controller: 'adminStudentCtrl',
+        //     controllerAs: 'vm'
+        // })
         .when('/admin-other-settings', {
             templateUrl: 'views/adminOtherSettings.html',
             controller: 'adminOtherSettingsCtrl',
@@ -96,8 +96,8 @@ angular
     .controller('scheduleCtrl', scheduleCtrl)
     .controller('adminHomeCtrl', adminHomeCtrl)
     .controller('adminGovernanceCtrl', adminGovernanceCtrl)
-    .controller('adminEnrolleeCtrl', adminEnrolleeCtrl)
-    .controller('adminStudentCtrl', adminStudentCtrl)
+    // .controller('adminEnrolleeCtrl', adminEnrolleeCtrl)
+    // .controller('adminStudentCtrl', adminStudentCtrl)
     .controller('adminStructureAndGoverningBodiesCtrl', adminStructureAndGoverningBodiesCtrl)
     .controller('adminOtherSettingsCtrl', adminOtherSettingsCtrl)
     .config(['$routeProvider', config])

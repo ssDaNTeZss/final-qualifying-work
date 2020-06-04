@@ -34,6 +34,8 @@ function adminOtherSettingsCtrl($http, $location, $scope) {
 
         document.getElementById("formControlInput0").value = ConnectionSetup.UrlForSchedule;
         document.getElementById("formControlInput1").value = ConnectionSetup.TimeToReturn;
+        document.getElementById("formControlInput2").value = ConnectionSetup.UrlForNewsEnrollee;
+        document.getElementById("formControlInput3").value = ConnectionSetup.UrlForNewsStudent;
     }
 
     $( "#updateConnectionSetup" ).click(function() {
@@ -41,6 +43,32 @@ function adminOtherSettingsCtrl($http, $location, $scope) {
         if (isQ) {
             let p1 = $http.put('/api/masData', {
                 urlForSchedule: document.getElementById("formControlInput0").value
+            }, {
+                headers: {
+                    token: localStorage.getItem('token')
+                }
+            });
+        }
+    });
+
+    $( "#updateConnectionSetup2" ).click(function() {
+        let isQ = confirm("Вы уверены? Это внесет изменения...");
+        if (isQ) {
+            let p1 = $http.put('/api/masData', {
+                urlForNewsEnrollee: document.getElementById("formControlInput2").value
+            }, {
+                headers: {
+                    token: localStorage.getItem('token')
+                }
+            });
+        }
+    });
+
+    $( "#updateConnectionSetup3" ).click(function() {
+        let isQ = confirm("Вы уверены? Это внесет изменения...");
+        if (isQ) {
+            let p1 = $http.put('/api/masData', {
+                urlForNewsStudent: document.getElementById("formControlInput3").value
             }, {
                 headers: {
                     token: localStorage.getItem('token')
@@ -84,12 +112,4 @@ function adminOtherSettingsCtrl($http, $location, $scope) {
             });
         }
     });
-
-    $( "#test" ).click(function() {
-        console.log('123');
-
-        $("span.btn").addClass('invisible');
-    });
-
-
 }

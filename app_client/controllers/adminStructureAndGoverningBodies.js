@@ -85,7 +85,11 @@ function adminStructureAndGoverningBodiesCtrl($http, $location, $scope) {
                 '<div class="form-group"><label for="formControlInput3">Текст блока "Телефон"</label>' +
                 '<input type="text" class="form-control" id="formControlInput3"></div>' +
                 '<div class="form-group"><label for="formControlInput4">Текст блока "Место нахождения"</label>' +
-                '<input type="text" class="form-control" id="formControlInput4"></div></form>';
+                '<input type="text" class="form-control" id="formControlInput4"></div>' +
+                '<div class="custom-control custom-switch">' +
+                '<input type="checkbox" class="custom-control-input" id="customSwitch1">\n' +
+                '<label class="custom-control-label" for="customSwitch1">Статус видимости</label>\n' +
+                '</div><br></form>';
 
             document.getElementById("divUpdateGovernance").appendChild(newForm);
 
@@ -94,6 +98,7 @@ function adminStructureAndGoverningBodiesCtrl($http, $location, $scope) {
             document.getElementById("formControlInput2").value = StructuralUnits[objSel.options.selectedIndex - 1].Email;
             document.getElementById("formControlInput3").value = StructuralUnits[objSel.options.selectedIndex - 1].Telephone;
             document.getElementById("formControlInput4").value = StructuralUnits[objSel.options.selectedIndex - 1].Location;
+            $('#customSwitch1').prop('checked', StructuralUnits[objSel.options.selectedIndex - 1].TheStatusOfVisibility);
         }
         status = 1;
         document.getElementById('updateDataStructureAndGoverningBodies' ).style.display = 'block';
@@ -110,7 +115,7 @@ function adminStructureAndGoverningBodiesCtrl($http, $location, $scope) {
                     headSecondBuilding: document.getElementById("formControlInput1").value,
                     textSecondBuilding: document.getElementById("formControlTextarea1").value,
                     headCollegeGoverningBodies: document.getElementById("formControlInput2").value,
-                    textCollegeGoverningBodies: document.getElementById("formControlTextarea2").value,
+                    textCollegeGoverningBodies: document.getElementById("formControlTextarea2").value
                 }, {
                     headers: {
                         token: localStorage.getItem('token')
@@ -124,6 +129,7 @@ function adminStructureAndGoverningBodiesCtrl($http, $location, $scope) {
                     email: document.getElementById("formControlInput2").value,
                     telephone: document.getElementById("formControlInput3").value,
                     location: document.getElementById("formControlInput4").value,
+                    checkboxStatus: $('#customSwitch1').prop('checked')
                 }, {
                     headers: {
                         token: localStorage.getItem('token')

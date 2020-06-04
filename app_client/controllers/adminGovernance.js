@@ -76,7 +76,11 @@ function adminGovernanceCtrl($http, $location, $scope) {
                 '<input type="text" class="form-control" id="formControlInput2"></div><div class="form-group">' +
                 '<label for="formControlInput3">Текст блока "Email"</label><input type="text" class="form-control" id="formControlInput3"></div>' +
                 '<div class="form-group"><label for="formControlInput4">Текст блока "Место нахождения"</label>' +
-                '<input type="text" class="form-control" id="formControlInput4"></div></form>';
+                '<input type="text" class="form-control" id="formControlInput4"></div>' +
+                '<div class="custom-control custom-switch">' +
+                '<input type="checkbox" class="custom-control-input" id="customSwitch1">\n' +
+                '<label class="custom-control-label" for="customSwitch1">Статус видимости</label>\n' +
+                '</div><br></form>';
 
             document.getElementById("divUpdateGovernance").appendChild(newForm);
 
@@ -85,6 +89,7 @@ function adminGovernanceCtrl($http, $location, $scope) {
             document.getElementById("formControlInput2").value = mas[2].Governance[objSel.options.selectedIndex].Telephone;
             document.getElementById("formControlInput3").value = mas[2].Governance[objSel.options.selectedIndex].Email;
             document.getElementById("formControlInput4").value = mas[2].Governance[objSel.options.selectedIndex].Location;
+            $('#customSwitch1').prop('checked', mas[2].Governance[objSel.options.selectedIndex].TheStatusOfVisibility);
         }
         status = 1;
         document.getElementById('updateDataGovernance' ).style.display = 'block';
@@ -92,6 +97,7 @@ function adminGovernanceCtrl($http, $location, $scope) {
 
     $( "#updateDataGovernance" ).click(function() {
         let isQ = confirm("Вы уверены? Это внесет изменения...");
+        // let checkboxStatus = $('#customSwitch1').prop('checked');
         if (isQ) {
             if (objSel.options.selectedIndex == 0) {
                 let p1 = $http.put('/api/masData', {
@@ -115,6 +121,7 @@ function adminGovernanceCtrl($http, $location, $scope) {
                     telephoneGovernance: document.getElementById("formControlInput2").value,
                     emailGovernance: document.getElementById("formControlInput3").value,
                     locationGovernance: document.getElementById("formControlInput4").value,
+                    checkboxStatus: $('#customSwitch1').prop('checked')
                 }, {
                     headers: {
                         token: localStorage.getItem('token')

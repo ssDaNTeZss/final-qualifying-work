@@ -56,9 +56,5 @@ process.on('SIGTERM', () => {
     });
 });
 
-require('./config');
-require('./pack');
-require('./student');
-require('./absenteeism');
 require('./user');
 require('./token');

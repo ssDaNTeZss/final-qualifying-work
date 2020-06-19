@@ -45,8 +45,6 @@ function scheduleCtrl($http, $location, $scope) {
                 $("div.text-for-sq-gn").removeClass('text-for-sq-gn');
 
                 $("table.table-bordered").addClass('table-striped');
-
-
                 break;
             //Выкл. «режим для слабовидящих»
             case 'off':

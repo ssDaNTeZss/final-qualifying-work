@@ -4,6 +4,8 @@ let token = mongoose.model('token');
 const crypto = require('crypto');
 const h = require('../helpers/common');
 
+
+//Регистрация
 module.exports.signup = (req, res) => {
 
     if (!req.body.login) {
@@ -29,6 +31,7 @@ module.exports.signup = (req, res) => {
         }
 
         const password = req.body.password;
+        //Шифрование
         const passwdSalt = (process.env.PASSWD_SALT) ? process.env.PASSWD_SALT : 'defaultPasswdSalt';
         const passwordHash = crypto
             .createHash('sha256')
@@ -72,6 +75,7 @@ module.exports.login = (req, res) => {
         }
 
         const password = req.body.password;
+        //Шифрование
         const passwdSalt = (process.env.PASSWD_SALT) ? process.env.PASSWD_SALT : 'defaultPasswdSalt';
         const passwordHash = crypto
             .createHash('sha256')
@@ -113,6 +117,7 @@ module.exports.login = (req, res) => {
     });
 };
 
+//Выход
 module.exports.logout = async(req, res) => {
     if(!await h.isValidToken(req.headers.token)){
         h.sendJsonResponse(res, 401, {error: 'unauthorized'});

@@ -113,6 +113,7 @@ function governanceCtrl($http, $location, $scope) {
 
         //Заполнение последующих блоков информацией из masData.json
         for (let a = 1; a < mas[2].Governance.length; a++) {
+            //Проверка на видимость записи
             if (mas[2].Governance[a].TheStatusOfVisibility === true) {
                 let newDiv = document.createElement('div');
                 newDiv.className = 'block-governance';

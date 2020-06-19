@@ -118,6 +118,7 @@ function structureAndGoverningBodiesCtrl($http, $location, $scope) {
 
         //Создание и заполнение блоков "Структурные подразделения"
         for (let a = 0; a < masSaGB2.length; a++) {
+            //Проверка на видимость записи
             if (masSaGB2[a].TheStatusOfVisibility === true) {
                 let newDiv2 = document.createElement("div");
                 newDiv2.className = 'col-12 block-SaGB';

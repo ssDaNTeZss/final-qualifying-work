@@ -1,5 +1,5 @@
 function adminOtherSettingsCtrl($http, $location, $scope) {
-    let p1 = $http.get('/api/packs', {
+    let p1 = $http.get('/api/masData', {
         headers: {
             token: localStorage.getItem('token')
         }

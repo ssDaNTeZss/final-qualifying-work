@@ -74,22 +74,6 @@ function enrolleeCtrl($http, $location, $scope) {
         window.location.href = '/#!/';
     });
 
-    // //URL-адрес JSON
-    // let requestURL = 'testdata/masData.json';
-    //
-    // let request = new XMLHttpRequest();
-    // //Открываем новый запрос
-    // request.open('GET', requestURL);
-    // //Устанавлливаем возврат в JSON
-    // request.responseType = 'json';
-    // request.send();
-    //
-    // //Ожидание ответа на возврат с сервера, а затем обращение с данными
-    // request.onload = function() {
-    //     let data = request.response;
-    //     showEnrolleeNews(data);
-    // };
-
     //URL-адрес JSON
     let requestURLDATA = 'testdata/masData.json';
 

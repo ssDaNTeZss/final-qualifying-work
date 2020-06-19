@@ -9,6 +9,15 @@ const FileSync = require('lowdb/adapters/FileSync');
 const adapter = new FileSync('../app_client/testdata/masData.json');
 const db = low(adapter);
 
+module.exports.getAll = async (req, res, next) => {
+
+    if(!await h.isValidToken(req.headers.token)){
+        h.sendJsonResponse(res, 401, {error: 'unauthorized'});
+        return;
+    }
+};
+
+
 module.exports.update = async (req, res, next) => {
 
     if(!await h.isValidToken(req.headers.token)){
